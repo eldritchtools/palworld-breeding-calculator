@@ -1,0 +1,2421 @@
+{
+    "pals": {
+        "1": {
+            "index": 0,
+            "id": "1",
+            "name": "Lamball",
+            "breeding_power": 1470
+        },
+        "2": {
+            "index": 1,
+            "id": "2",
+            "name": "Cattiva",
+            "breeding_power": 1460
+        },
+        "3": {
+            "index": 2,
+            "id": "3",
+            "name": "Chikipi",
+            "breeding_power": 1500
+        },
+        "4": {
+            "index": 3,
+            "id": "4",
+            "name": "Lifmunk",
+            "breeding_power": 1430
+        },
+        "5": {
+            "index": 4,
+            "id": "5",
+            "name": "Foxparks",
+            "breeding_power": 1400
+        },
+        "5B": {
+            "index": 5,
+            "id": "5B",
+            "name": "Foxparks Cryst",
+            "breeding_power": 1305,
+            "unique": true,
+            "parents": [
+                [
+                    "5",
+                    "57"
+                ]
+            ]
+        },
+        "6": {
+            "index": 6,
+            "id": "6",
+            "name": "Fuack",
+            "breeding_power": 1330
+        },
+        "6B": {
+            "index": 7,
+            "id": "6B",
+            "name": "Fuack Ignis",
+            "breeding_power": 1290,
+            "unique": true,
+            "parents": [
+                [
+                    "6",
+                    "70"
+                ]
+            ]
+        },
+        "7": {
+            "index": 8,
+            "id": "7",
+            "name": "Sparkit",
+            "breeding_power": 1410
+        },
+        "8": {
+            "index": 9,
+            "id": "8",
+            "name": "Tanzee",
+            "breeding_power": 1250
+        },
+        "9": {
+            "index": 10,
+            "id": "9",
+            "name": "Rooby",
+            "breeding_power": 1155
+        },
+        "10": {
+            "index": 11,
+            "id": "10",
+            "name": "Pengullet",
+            "breeding_power": 1350
+        },
+        "10B": {
+            "index": 12,
+            "id": "10B",
+            "name": "Pengullet Lux",
+            "breeding_power": 1310,
+            "unique": true,
+            "parents": [
+                [
+                    "7",
+                    "10"
+                ]
+            ]
+        },
+        "11": {
+            "index": 13,
+            "id": "11",
+            "name": "Penking",
+            "breeding_power": 520
+        },
+        "11B": {
+            "index": 14,
+            "id": "11B",
+            "name": "Penking Lux",
+            "breeding_power": 490,
+            "unique": true,
+            "parents": [
+                [
+                    "11",
+                    "60"
+                ]
+            ]
+        },
+        "12": {
+            "index": 15,
+            "id": "12",
+            "name": "Jolthog",
+            "breeding_power": 1370
+        },
+        "12B": {
+            "index": 16,
+            "id": "12B",
+            "name": "Jolthog Cryst",
+            "breeding_power": 1360,
+            "unique": true,
+            "parents": [
+                [
+                    "10",
+                    "12"
+                ]
+            ]
+        },
+        "13": {
+            "index": 17,
+            "id": "13",
+            "name": "Gumoss",
+            "breeding_power": 1240
+        },
+        "14": {
+            "index": 18,
+            "id": "14",
+            "name": "Vixy",
+            "breeding_power": 1450
+        },
+        "15": {
+            "index": 19,
+            "id": "15",
+            "name": "Hoocrates",
+            "breeding_power": 1390
+        },
+        "16": {
+            "index": 20,
+            "id": "16",
+            "name": "Teafant",
+            "breeding_power": 1490
+        },
+        "17": {
+            "index": 21,
+            "id": "17",
+            "name": "Depresso",
+            "breeding_power": 1380
+        },
+        "18": {
+            "index": 22,
+            "id": "18",
+            "name": "Cremis",
+            "breeding_power": 1455
+        },
+        "19": {
+            "index": 23,
+            "id": "19",
+            "name": "Daedream",
+            "breeding_power": 1230
+        },
+        "20": {
+            "index": 24,
+            "id": "20",
+            "name": "Rushoar",
+            "breeding_power": 1130
+        },
+        "21": {
+            "index": 25,
+            "id": "21",
+            "name": "Nox",
+            "breeding_power": 1180
+        },
+        "22": {
+            "index": 26,
+            "id": "22",
+            "name": "Fuddler",
+            "breeding_power": 1220
+        },
+        "23": {
+            "index": 27,
+            "id": "23",
+            "name": "Killamari",
+            "breeding_power": 1290
+        },
+        "23B": {
+            "index": 28,
+            "id": "23B",
+            "name": "Killamari Primo",
+            "breeding_power": 1250,
+            "unique": true,
+            "parents": [
+                [
+                    "23",
+                    "39"
+                ]
+            ]
+        },
+        "24": {
+            "index": 29,
+            "id": "24",
+            "name": "Mau",
+            "breeding_power": 1480
+        },
+        "24B": {
+            "index": 30,
+            "id": "24B",
+            "name": "Mau Cryst",
+            "breeding_power": 1440,
+            "unique": true,
+            "parents": [
+                [
+                    "10",
+                    "24"
+                ]
+            ]
+        },
+        "25": {
+            "index": 31,
+            "id": "25",
+            "name": "Celaray",
+            "breeding_power": 870
+        },
+        "25B": {
+            "index": 32,
+            "id": "25B",
+            "name": "Celaray Lux",
+            "breeding_power": 830,
+            "unique": true,
+            "parents": [
+                [
+                    "25",
+                    "56"
+                ]
+            ]
+        },
+        "26": {
+            "index": 33,
+            "id": "26",
+            "name": "Direhowl",
+            "breeding_power": 1060
+        },
+        "27": {
+            "index": 34,
+            "id": "27",
+            "name": "Tocotoco",
+            "breeding_power": 1340
+        },
+        "28": {
+            "index": 35,
+            "id": "28",
+            "name": "Flopie",
+            "breeding_power": 1280
+        },
+        "29": {
+            "index": 36,
+            "id": "29",
+            "name": "Mozzarina",
+            "breeding_power": 910
+        },
+        "30": {
+            "index": 37,
+            "id": "30",
+            "name": "Bristla",
+            "breeding_power": 1320
+        },
+        "31": {
+            "index": 38,
+            "id": "31",
+            "name": "Gobfin",
+            "breeding_power": 1090
+        },
+        "31B": {
+            "index": 39,
+            "id": "31B",
+            "name": "Gobfin Ignis",
+            "breeding_power": 1100,
+            "unique": true,
+            "parents": [
+                [
+                    "9",
+                    "31"
+                ]
+            ]
+        },
+        "32": {
+            "index": 40,
+            "id": "32",
+            "name": "Hangyu",
+            "breeding_power": 1420
+        },
+        "32B": {
+            "index": 41,
+            "id": "32B",
+            "name": "Hangyu Cryst",
+            "breeding_power": 1422,
+            "unique": true,
+            "parents": [
+                [
+                    "32",
+                    "53"
+                ]
+            ]
+        },
+        "33": {
+            "index": 42,
+            "id": "33",
+            "name": "Mossanda",
+            "breeding_power": 430
+        },
+        "33B": {
+            "index": 43,
+            "id": "33B",
+            "name": "Mossanda Lux",
+            "breeding_power": 390,
+            "unique": true,
+            "parents": [
+                [
+                    "33",
+                    "103"
+                ]
+            ]
+        },
+        "34": {
+            "index": 44,
+            "id": "34",
+            "name": "Woolipop",
+            "breeding_power": 1190
+        },
+        "35": {
+            "index": 45,
+            "id": "35",
+            "name": "Caprity",
+            "breeding_power": 930
+        },
+        "35B": {
+            "index": 46,
+            "id": "35B",
+            "name": "Caprity Noct",
+            "breeding_power": 855,
+            "unique": true,
+            "parents": [
+                [
+                    "35",
+                    "135"
+                ]
+            ]
+        },
+        "36": {
+            "index": 47,
+            "id": "36",
+            "name": "Melpaca",
+            "breeding_power": 890
+        },
+        "37": {
+            "index": 48,
+            "id": "37",
+            "name": "Eikthyrdeer",
+            "breeding_power": 920
+        },
+        "37B": {
+            "index": 49,
+            "id": "37B",
+            "name": "Eikthyrdeer Terra",
+            "breeding_power": 900,
+            "unique": true,
+            "parents": [
+                [
+                    "32",
+                    "37"
+                ]
+            ]
+        },
+        "38": {
+            "index": 50,
+            "id": "38",
+            "name": "Nitewing",
+            "breeding_power": 420
+        },
+        "39": {
+            "index": 51,
+            "id": "39",
+            "name": "Ribbuny",
+            "breeding_power": 1310
+        },
+        "39B": {
+            "index": 52,
+            "id": "39B",
+            "name": "Ribbuny Botan",
+            "breeding_power": 1205,
+            "unique": true,
+            "parents": [
+                [
+                    "30",
+                    "39"
+                ]
+            ]
+        },
+        "40": {
+            "index": 53,
+            "id": "40",
+            "name": "Incineram",
+            "breeding_power": 590
+        },
+        "40B": {
+            "index": 54,
+            "id": "40B",
+            "name": "Incineram Noct",
+            "breeding_power": 580,
+            "unique": true,
+            "parents": [
+                [
+                    "40",
+                    "66"
+                ]
+            ]
+        },
+        "41": {
+            "index": 55,
+            "id": "41",
+            "name": "Cinnamoth",
+            "breeding_power": 490
+        },
+        "42": {
+            "index": 56,
+            "id": "42",
+            "name": "Arsox",
+            "breeding_power": 790
+        },
+        "43": {
+            "index": 57,
+            "id": "43",
+            "name": "Dumud",
+            "breeding_power": 895
+        },
+        "43B": {
+            "index": 58,
+            "id": "43B",
+            "name": "Dumud Gild",
+            "breeding_power": 855,
+            "unique": true,
+            "parents": [
+                [
+                    "37B",
+                    "43"
+                ]
+            ]
+        },
+        "44": {
+            "index": 59,
+            "id": "44",
+            "name": "Cawgnito",
+            "breeding_power": 1080
+        },
+        "45": {
+            "index": 60,
+            "id": "45",
+            "name": "Leezpunk",
+            "breeding_power": 1120
+        },
+        "45B": {
+            "index": 61,
+            "id": "45B",
+            "name": "Leezpunk Ignis",
+            "breeding_power": 1140,
+            "unique": true,
+            "parents": [
+                [
+                    "45",
+                    "70"
+                ]
+            ]
+        },
+        "46": {
+            "index": 62,
+            "id": "46",
+            "name": "Loupmoon",
+            "breeding_power": 950
+        },
+        "46B": {
+            "index": 63,
+            "id": "46B",
+            "name": "Loupmoon Cryst",
+            "breeding_power": 805,
+            "unique": true,
+            "parents": [
+                [
+                    "46",
+                    "54"
+                ]
+            ]
+        },
+        "47": {
+            "index": 64,
+            "id": "47",
+            "name": "Galeclaw",
+            "breeding_power": 1030
+        },
+        "48": {
+            "index": 65,
+            "id": "48",
+            "name": "Robinquill",
+            "breeding_power": 1020
+        },
+        "48B": {
+            "index": 66,
+            "id": "48B",
+            "name": "Robinquill Terra",
+            "breeding_power": 1000,
+            "unique": true,
+            "parents": [
+                [
+                    "22",
+                    "48"
+                ]
+            ]
+        },
+        "49": {
+            "index": 67,
+            "id": "49",
+            "name": "Gorirat",
+            "breeding_power": 1040
+        },
+        "49B": {
+            "index": 68,
+            "id": "49B",
+            "name": "Gorirat Terra",
+            "breeding_power": 1030,
+            "unique": true,
+            "parents": [
+                [
+                    "49",
+                    "117"
+                ]
+            ]
+        },
+        "50": {
+            "index": 69,
+            "id": "50",
+            "name": "Beegarde",
+            "breeding_power": 1070
+        },
+        "51": {
+            "index": 70,
+            "id": "51",
+            "name": "Elizabee",
+            "breeding_power": 330
+        },
+        "52": {
+            "index": 71,
+            "id": "52",
+            "name": "Grintale",
+            "breeding_power": 510
+        },
+        "53": {
+            "index": 72,
+            "id": "53",
+            "name": "Swee",
+            "breeding_power": 1300
+        },
+        "54": {
+            "index": 73,
+            "id": "54",
+            "name": "Sweepa",
+            "breeding_power": 410
+        },
+        "55": {
+            "index": 74,
+            "id": "55",
+            "name": "Chillet",
+            "breeding_power": 800
+        },
+        "55B": {
+            "index": 75,
+            "id": "55B",
+            "name": "Chillet Ignis",
+            "breeding_power": 790,
+            "unique": true,
+            "parents": [
+                [
+                    "42",
+                    "55"
+                ]
+            ]
+        },
+        "56": {
+            "index": 76,
+            "id": "56",
+            "name": "Univolt",
+            "breeding_power": 680
+        },
+        "57": {
+            "index": 77,
+            "id": "57",
+            "name": "Foxcicle",
+            "breeding_power": 760
+        },
+        "58": {
+            "index": 78,
+            "id": "58",
+            "name": "Pyrin",
+            "breeding_power": 360
+        },
+        "58B": {
+            "index": 79,
+            "id": "58B",
+            "name": "Pyrin Noct",
+            "breeding_power": 240,
+            "unique": true,
+            "parents": [
+                [
+                    "58",
+                    "75"
+                ]
+            ]
+        },
+        "59": {
+            "index": 80,
+            "id": "59",
+            "name": "Reindrix",
+            "breeding_power": 880
+        },
+        "60": {
+            "index": 81,
+            "id": "60",
+            "name": "Rayhound",
+            "breeding_power": 740
+        },
+        "61": {
+            "index": 82,
+            "id": "61",
+            "name": "Kitsun",
+            "breeding_power": 830
+        },
+        "61B": {
+            "index": 83,
+            "id": "61B",
+            "name": "Kitsun Noct",
+            "breeding_power": 735,
+            "unique": true,
+            "parents": [
+                [
+                    "61",
+                    "139"
+                ]
+            ]
+        },
+        "62": {
+            "index": 84,
+            "id": "62",
+            "name": "Dazzi",
+            "breeding_power": 1210
+        },
+        "62B": {
+            "index": 85,
+            "id": "62B",
+            "name": "Dazzi Noct",
+            "breeding_power": 1115,
+            "unique": true,
+            "parents": [
+                [
+                    "62",
+                    "133"
+                ]
+            ]
+        },
+        "63": {
+            "index": 86,
+            "id": "63",
+            "name": "Lunaris",
+            "breeding_power": 1110
+        },
+        "64": {
+            "index": 87,
+            "id": "64",
+            "name": "Dinossom",
+            "breeding_power": 820
+        },
+        "64B": {
+            "index": 88,
+            "id": "64B",
+            "name": "Dinossom Lux",
+            "breeding_power": 810,
+            "unique": true,
+            "parents": [
+                [
+                    "60",
+                    "64"
+                ]
+            ]
+        },
+        "65": {
+            "index": 89,
+            "id": "65",
+            "name": "Surfent",
+            "breeding_power": 560
+        },
+        "65B": {
+            "index": 90,
+            "id": "65B",
+            "name": "Surfent Terra",
+            "breeding_power": 550,
+            "unique": true,
+            "parents": [
+                [
+                    "43",
+                    "65"
+                ]
+            ]
+        },
+        "66": {
+            "index": 91,
+            "id": "66",
+            "name": "Maraith",
+            "breeding_power": 1150
+        },
+        "67": {
+            "index": 92,
+            "id": "67",
+            "name": "Digtoise",
+            "breeding_power": 850
+        },
+        "68": {
+            "index": 93,
+            "id": "68",
+            "name": "Tombat",
+            "breeding_power": 750
+        },
+        "69": {
+            "index": 94,
+            "id": "69",
+            "name": "Lovander",
+            "breeding_power": 940
+        },
+        "70": {
+            "index": 95,
+            "id": "70",
+            "name": "Flambelle",
+            "breeding_power": 1405
+        },
+        "71": {
+            "index": 96,
+            "id": "71",
+            "name": "Vanwyrm",
+            "breeding_power": 660
+        },
+        "71B": {
+            "index": 97,
+            "id": "71B",
+            "name": "Vanwyrm Cryst",
+            "breeding_power": 620,
+            "unique": true,
+            "parents": [
+                [
+                    "57",
+                    "71"
+                ]
+            ]
+        },
+        "72": {
+            "index": 98,
+            "id": "72",
+            "name": "Bushi",
+            "breeding_power": 640
+        },
+        "72B": {
+            "index": 99,
+            "id": "72B",
+            "name": "Bushi Noct",
+            "breeding_power": 650,
+            "unique": true,
+            "parents": [
+                [
+                    "72",
+                    "118"
+                ]
+            ]
+        },
+        "73": {
+            "index": 100,
+            "id": "73",
+            "name": "Beakon",
+            "breeding_power": 220
+        },
+        "74": {
+            "index": 101,
+            "id": "74",
+            "name": "Ragnahawk",
+            "breeding_power": 380
+        },
+        "75": {
+            "index": 102,
+            "id": "75",
+            "name": "Katress",
+            "breeding_power": 700
+        },
+        "75B": {
+            "index": 103,
+            "id": "75B",
+            "name": "Katress Ignis",
+            "breeding_power": 690,
+            "unique": true,
+            "parents": [
+                [
+                    "75",
+                    "76"
+                ]
+            ]
+        },
+        "76": {
+            "index": 104,
+            "id": "76",
+            "name": "Wixen",
+            "breeding_power": 1160
+        },
+        "76B": {
+            "index": 105,
+            "id": "76B",
+            "name": "Wixen Noct",
+            "breeding_power": 1150,
+            "unique": true,
+            "parents": [
+                [
+                    "75",
+                    "76"
+                ]
+            ]
+        },
+        "77": {
+            "index": 106,
+            "id": "77",
+            "name": "Verdash",
+            "breeding_power": 990
+        },
+        "78": {
+            "index": 107,
+            "id": "78",
+            "name": "Vaelet",
+            "breeding_power": 1050
+        },
+        "79": {
+            "index": 108,
+            "id": "79",
+            "name": "Sibelyx",
+            "breeding_power": 450
+        },
+        "80": {
+            "index": 109,
+            "id": "80",
+            "name": "Elphidran",
+            "breeding_power": 540
+        },
+        "80B": {
+            "index": 110,
+            "id": "80B",
+            "name": "Elphidran Aqua",
+            "breeding_power": 530,
+            "unique": true,
+            "parents": [
+                [
+                    "65",
+                    "80"
+                ]
+            ]
+        },
+        "81": {
+            "index": 111,
+            "id": "81",
+            "name": "Kelpsea",
+            "breeding_power": 1260
+        },
+        "81B": {
+            "index": 112,
+            "id": "81B",
+            "name": "Kelpsea Ignis",
+            "breeding_power": 1270
+        },
+        "82": {
+            "index": 113,
+            "id": "82",
+            "name": "Azurobe",
+            "breeding_power": 500
+        },
+        "82B": {
+            "index": 114,
+            "id": "82B",
+            "name": "Azurobe Cryst",
+            "breeding_power": 480,
+            "unique": true,
+            "parents": [
+                [
+                    "82",
+                    "143"
+                ]
+            ]
+        },
+        "83": {
+            "index": 115,
+            "id": "83",
+            "name": "Cryolinx",
+            "breeding_power": 130
+        },
+        "83B": {
+            "index": 116,
+            "id": "83B",
+            "name": "Cryolinx Terra",
+            "breeding_power": 160,
+            "unique": true,
+            "parents": [
+                [
+                    "83",
+                    "123"
+                ]
+            ]
+        },
+        "84": {
+            "index": 117,
+            "id": "84",
+            "name": "Blazehowl",
+            "breeding_power": 710
+        },
+        "84B": {
+            "index": 118,
+            "id": "84B",
+            "name": "Blazehowl Noct",
+            "breeding_power": 670,
+            "unique": true,
+            "parents": [
+                [
+                    "84",
+                    "94"
+                ]
+            ]
+        },
+        "85": {
+            "index": 119,
+            "id": "85",
+            "name": "Relaxaurus",
+            "breeding_power": 280
+        },
+        "85B": {
+            "index": 120,
+            "id": "85B",
+            "name": "Relaxaurus Lux",
+            "breeding_power": 270,
+            "unique": true,
+            "parents": [
+                [
+                    "7",
+                    "85"
+                ]
+            ]
+        },
+        "86": {
+            "index": 121,
+            "id": "86",
+            "name": "Broncherry",
+            "breeding_power": 860
+        },
+        "86B": {
+            "index": 122,
+            "id": "86B",
+            "name": "Broncherry Aqua",
+            "breeding_power": 840,
+            "unique": true,
+            "parents": [
+                [
+                    "6",
+                    "86"
+                ]
+            ]
+        },
+        "87": {
+            "index": 123,
+            "id": "87",
+            "name": "Petallia",
+            "breeding_power": 780
+        },
+        "88": {
+            "index": 124,
+            "id": "88",
+            "name": "Reptyro",
+            "breeding_power": 320
+        },
+        "88B": {
+            "index": 125,
+            "id": "88B",
+            "name": "Reptyro Cryst",
+            "breeding_power": 230,
+            "unique": true,
+            "parents": [
+                [
+                    "57",
+                    "88"
+                ]
+            ]
+        },
+        "89": {
+            "index": 126,
+            "id": "89",
+            "name": "Kingpaca",
+            "breeding_power": 470
+        },
+        "89B": {
+            "index": 127,
+            "id": "89B",
+            "name": "Kingpaca Cryst",
+            "breeding_power": 440,
+            "unique": true,
+            "parents": [
+                [
+                    "59",
+                    "89"
+                ]
+            ]
+        },
+        "90": {
+            "index": 128,
+            "id": "90",
+            "name": "Mammorest",
+            "breeding_power": 300
+        },
+        "90B": {
+            "index": 129,
+            "id": "90B",
+            "name": "Mammorest Cryst",
+            "breeding_power": 290,
+            "unique": true,
+            "parents": [
+                [
+                    "90",
+                    "91"
+                ]
+            ]
+        },
+        "91": {
+            "index": 130,
+            "id": "91",
+            "name": "Wumpo",
+            "breeding_power": 460
+        },
+        "91B": {
+            "index": 131,
+            "id": "91B",
+            "name": "Wumpo Botan",
+            "breeding_power": 480
+        },
+        "92": {
+            "index": 132,
+            "id": "92",
+            "name": "Warsect",
+            "breeding_power": 340
+        },
+        "92B": {
+            "index": 133,
+            "id": "92B",
+            "name": "Warsect Terra",
+            "breeding_power": 275,
+            "unique": true,
+            "parents": [
+                [
+                    "67",
+                    "92"
+                ]
+            ]
+        },
+        "93": {
+            "index": 134,
+            "id": "93",
+            "name": "Fenglope",
+            "breeding_power": 980
+        },
+        "93B": {
+            "index": 135,
+            "id": "93B",
+            "name": "Fenglope Lux",
+            "breeding_power": 835,
+            "unique": true,
+            "parents": [
+                [
+                    "93",
+                    "136"
+                ]
+            ]
+        },
+        "94": {
+            "index": 136,
+            "id": "94",
+            "name": "Felbat",
+            "breeding_power": 1010
+        },
+        "95": {
+            "index": 137,
+            "id": "95",
+            "name": "Quivern",
+            "breeding_power": 350
+        },
+        "95B": {
+            "index": 138,
+            "id": "95B",
+            "name": "Quivern Botan",
+            "breeding_power": 340,
+            "unique": true,
+            "parents": [
+                [
+                    "95",
+                    "115"
+                ]
+            ]
+        },
+        "96": {
+            "index": 139,
+            "id": "96",
+            "name": "Blazamut",
+            "breeding_power": 10
+        },
+        "96B": {
+            "index": 140,
+            "id": "96B",
+            "name": "Blazamut Ryu",
+            "breeding_power": 9,
+            "unique": true
+        },
+        "97": {
+            "index": 141,
+            "id": "97",
+            "name": "Helzephyr",
+            "breeding_power": 190
+        },
+        "97B": {
+            "index": 142,
+            "id": "97B",
+            "name": "Helzephyr Lux",
+            "breeding_power": 180,
+            "unique": true,
+            "parents": [
+                [
+                    "73",
+                    "97"
+                ]
+            ]
+        },
+        "98": {
+            "index": 143,
+            "id": "98",
+            "name": "Astegon",
+            "breeding_power": 150
+        },
+        "99": {
+            "index": 144,
+            "id": "99",
+            "name": "Menasting",
+            "breeding_power": 260
+        },
+        "99B": {
+            "index": 145,
+            "id": "99B",
+            "name": "Menasting Terra",
+            "breeding_power": 250,
+            "unique": true,
+            "parents": [
+                [
+                    "99",
+                    "120"
+                ]
+            ]
+        },
+        "100": {
+            "index": 146,
+            "id": "100",
+            "name": "Anubis",
+            "breeding_power": 570
+        },
+        "101": {
+            "index": 147,
+            "id": "101",
+            "name": "Jormuntide",
+            "breeding_power": 310
+        },
+        "101B": {
+            "index": 148,
+            "id": "101B",
+            "name": "Jormuntide Ignis",
+            "breeding_power": 315,
+            "unique": true,
+            "parents": [
+                [
+                    "84",
+                    "101"
+                ]
+            ]
+        },
+        "102": {
+            "index": 149,
+            "id": "102",
+            "name": "Suzaku",
+            "breeding_power": 50
+        },
+        "102B": {
+            "index": 150,
+            "id": "102B",
+            "name": "Suzaku Aqua",
+            "breeding_power": 30,
+            "unique": true,
+            "parents": [
+                [
+                    "101",
+                    "102"
+                ]
+            ]
+        },
+        "103": {
+            "index": 151,
+            "id": "103",
+            "name": "Grizzbolt",
+            "breeding_power": 200,
+            "unique": true,
+            "parents": [
+                [
+                    "33",
+                    "60"
+                ]
+            ]
+        },
+        "104": {
+            "index": 152,
+            "id": "104",
+            "name": "Lyleen",
+            "breeding_power": 250,
+            "unique": true,
+            "parents": [
+                [
+                    "33",
+                    "87"
+                ]
+            ]
+        },
+        "104B": {
+            "index": 153,
+            "id": "104B",
+            "name": "Lyleen Noct",
+            "breeding_power": 210,
+            "unique": true,
+            "parents": [
+                [
+                    "99",
+                    "104"
+                ]
+            ]
+        },
+        "105": {
+            "index": 154,
+            "id": "105",
+            "name": "Faleris",
+            "breeding_power": 370,
+            "unique": true,
+            "parents": [
+                [
+                    "71",
+                    "100"
+                ]
+            ]
+        },
+        "105B": {
+            "index": 155,
+            "id": "105B",
+            "name": "Faleris Aqua",
+            "breeding_power": 245,
+            "unique": true,
+            "parents": [
+                [
+                    "101",
+                    "105"
+                ]
+            ]
+        },
+        "106": {
+            "index": 156,
+            "id": "106",
+            "name": "Orserk",
+            "breeding_power": 140,
+            "unique": true,
+            "parents": [
+                [
+                    "85",
+                    "103"
+                ]
+            ]
+        },
+        "107": {
+            "index": 157,
+            "id": "107",
+            "name": "Shadowbeak",
+            "breeding_power": 60,
+            "unique": true,
+            "parents": [
+                [
+                    "61",
+                    "98"
+                ]
+            ]
+        },
+        "108": {
+            "index": 158,
+            "id": "108",
+            "name": "Paladius",
+            "breeding_power": 80,
+            "unique": true
+        },
+        "109": {
+            "index": 159,
+            "id": "109",
+            "name": "Necromus",
+            "breeding_power": 70,
+            "unique": true
+        },
+        "110": {
+            "index": 160,
+            "id": "110",
+            "name": "Frostallion",
+            "breeding_power": 120,
+            "unique": true
+        },
+        "110B": {
+            "index": 161,
+            "id": "110B",
+            "name": "Frostallion Noct",
+            "breeding_power": 100,
+            "unique": true,
+            "parents": [
+                [
+                    "97",
+                    "110"
+                ]
+            ]
+        },
+        "111": {
+            "index": 162,
+            "id": "111",
+            "name": "Jetragon",
+            "breeding_power": 90,
+            "unique": true
+        },
+        "112": {
+            "index": 163,
+            "id": "112",
+            "name": "Bellanoir",
+            "breeding_power": 1,
+            "unique": true,
+            "parents": [
+                [
+                    "112",
+                    "112B"
+                ]
+            ]
+        },
+        "112B": {
+            "index": 164,
+            "id": "112B",
+            "name": "Bellanoir Libero",
+            "breeding_power": 1,
+            "unique": true
+        },
+        "113": {
+            "index": 165,
+            "id": "113",
+            "name": "Selyne",
+            "breeding_power": 345,
+            "unique": true,
+            "parents": [
+                [
+                    "63",
+                    "108"
+                ]
+            ]
+        },
+        "114": {
+            "index": 166,
+            "id": "114",
+            "name": "Croajiro",
+            "breeding_power": 795
+        },
+        "114B": {
+            "index": 167,
+            "id": "114B",
+            "name": "Croajiro Noct",
+            "breeding_power": 765,
+            "unique": true,
+            "parents": [
+                [
+                    "72B",
+                    "114"
+                ]
+            ]
+        },
+        "115": {
+            "index": 168,
+            "id": "115",
+            "name": "Lullu",
+            "breeding_power": 905
+        },
+        "116": {
+            "index": 169,
+            "id": "116",
+            "name": "Shroomer",
+            "breeding_power": 720
+        },
+        "116B": {
+            "index": 170,
+            "id": "116B",
+            "name": "Shroomer Noct",
+            "breeding_power": 730
+        },
+        "117": {
+            "index": 171,
+            "id": "117",
+            "name": "Kikit",
+            "breeding_power": 1125
+        },
+        "118": {
+            "index": 172,
+            "id": "118",
+            "name": "Sootseer",
+            "breeding_power": 545
+        },
+        "119": {
+            "index": 173,
+            "id": "119",
+            "name": "Prixter",
+            "breeding_power": 355
+        },
+        "120": {
+            "index": 174,
+            "id": "120",
+            "name": "Knocklem",
+            "breeding_power": 265
+        },
+        "121": {
+            "index": 175,
+            "id": "121",
+            "name": "Yakumo",
+            "breeding_power": 945
+        },
+        "122": {
+            "index": 176,
+            "id": "122",
+            "name": "Dogen",
+            "breeding_power": 665
+        },
+        "123": {
+            "index": 177,
+            "id": "123",
+            "name": "Dazemu",
+            "breeding_power": 675
+        },
+        "124": {
+            "index": 178,
+            "id": "124",
+            "name": "Mimog",
+            "breeding_power": 1200,
+            "unique": true
+        },
+        "125": {
+            "index": 179,
+            "id": "125",
+            "name": "Xenovader",
+            "breeding_power": 465,
+            "unique": true
+        },
+        "126": {
+            "index": 180,
+            "id": "126",
+            "name": "Xenogard",
+            "breeding_power": 435,
+            "unique": true
+        },
+        "127": {
+            "index": 181,
+            "id": "127",
+            "name": "Xenolord",
+            "breeding_power": 265,
+            "unique": true
+        },
+        "128": {
+            "index": 182,
+            "id": "128",
+            "name": "Nitemary",
+            "breeding_power": 705
+        },
+        "129": {
+            "index": 183,
+            "id": "129",
+            "name": "Starryon",
+            "breeding_power": 365
+        },
+        "130": {
+            "index": 184,
+            "id": "130",
+            "name": "Silvegis",
+            "breeding_power": 215
+        },
+        "131": {
+            "index": 185,
+            "id": "131",
+            "name": "Smokie",
+            "breeding_power": 1245
+        },
+        "132": {
+            "index": 186,
+            "id": "132",
+            "name": "Celesdir",
+            "breeding_power": 815,
+            "unique": true,
+            "parents": [
+                [
+                    "37B",
+                    "140"
+                ]
+            ]
+        },
+        "133": {
+            "index": 187,
+            "id": "133",
+            "name": "Omascul",
+            "breeding_power": 630
+        },
+        "134": {
+            "index": 188,
+            "id": "134",
+            "name": "Splatterina",
+            "breeding_power": 725
+        },
+        "135": {
+            "index": 189,
+            "id": "135",
+            "name": "Tarantriss",
+            "breeding_power": 825
+        },
+        "136": {
+            "index": 190,
+            "id": "136",
+            "name": "Azurmane",
+            "breeding_power": 400
+        },
+        "137": {
+            "index": 191,
+            "id": "137",
+            "name": "Bastigor",
+            "breeding_power": 170,
+            "unique": true,
+            "parents": [
+                [
+                    "100",
+                    "110"
+                ]
+            ]
+        },
+        "138": {
+            "index": 192,
+            "id": "138",
+            "name": "Prunelia",
+            "breeding_power": 755
+        },
+        "139": {
+            "index": 193,
+            "id": "139",
+            "name": "Nyafia",
+            "breeding_power": 645
+        },
+        "140": {
+            "index": 194,
+            "id": "140",
+            "name": "Gildane",
+            "breeding_power": 505
+        },
+        "141": {
+            "index": 195,
+            "id": "141",
+            "name": "Herbil",
+            "breeding_power": 1445
+        },
+        "142": {
+            "index": 196,
+            "id": "142",
+            "name": "Icelyn",
+            "breeding_power": 605
+        },
+        "143": {
+            "index": 197,
+            "id": "143",
+            "name": "Frostplume",
+            "breeding_power": 655
+        },
+        "144": {
+            "index": 198,
+            "id": "144",
+            "name": "Palumba",
+            "breeding_power": 455
+        },
+        "145": {
+            "index": 199,
+            "id": "145",
+            "name": "Braloha",
+            "breeding_power": 335
+        },
+        "146": {
+            "index": 200,
+            "id": "146",
+            "name": "Munchill",
+            "breeding_power": 1335
+        },
+        "147": {
+            "index": 201,
+            "id": "147",
+            "name": "Polapup",
+            "breeding_power": 745
+        },
+        "148": {
+            "index": 202,
+            "id": "148",
+            "name": "Turtacle",
+            "breeding_power": 1105
+        },
+        "148B": {
+            "index": 203,
+            "id": "148B",
+            "name": "Turtacle Terra",
+            "breeding_power": 1065,
+            "unique": true,
+            "parents": [
+                [
+                    "67",
+                    "148"
+                ]
+            ]
+        },
+        "149": {
+            "index": 204,
+            "id": "149",
+            "name": "Jellroy",
+            "breeding_power": 1395
+        },
+        "150": {
+            "index": 205,
+            "id": "150",
+            "name": "Jelliette",
+            "breeding_power": 1385
+        },
+        "151": {
+            "index": 206,
+            "id": "151",
+            "name": "Gloopie",
+            "breeding_power": 1195
+        },
+        "152": {
+            "index": 207,
+            "id": "152",
+            "name": "Finsider",
+            "breeding_power": 1295
+        },
+        "152B": {
+            "index": 208,
+            "id": "152B",
+            "name": "Finsider Ignis",
+            "breeding_power": 1255,
+            "unique": true,
+            "parents": [
+                [
+                    "31B",
+                    "152"
+                ]
+            ]
+        },
+        "153": {
+            "index": 209,
+            "id": "153",
+            "name": "Ghangler",
+            "breeding_power": 525
+        },
+        "153B": {
+            "index": 210,
+            "id": "153B",
+            "name": "Ghangler Ignis",
+            "breeding_power": 505,
+            "unique": true,
+            "parents": [
+                [
+                    "118",
+                    "153"
+                ]
+            ]
+        },
+        "154": {
+            "index": 211,
+            "id": "154",
+            "name": "Whalaska",
+            "breeding_power": 445
+        },
+        "154B": {
+            "index": 212,
+            "id": "154B",
+            "name": "Whalaska Ignis",
+            "breeding_power": 430,
+            "unique": true,
+            "parents": [
+                [
+                    "55B",
+                    "154"
+                ]
+            ]
+        },
+        "155": {
+            "index": 213,
+            "id": "155",
+            "name": "Neptilius",
+            "breeding_power": 90,
+            "unique": true
+        },
+        "T1": {
+            "index": 214,
+            "id": "T1",
+            "name": "Green Slime",
+            "breeding_power": 1430,
+            "unique": true
+        },
+        "T2": {
+            "index": 215,
+            "id": "T2",
+            "name": "Blue Slime",
+            "breeding_power": 1490,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T2"
+                ]
+            ]
+        },
+        "T3": {
+            "index": 216,
+            "id": "T3",
+            "name": "Red Slime",
+            "breeding_power": 1405,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T3"
+                ]
+            ]
+        },
+        "T4": {
+            "index": 217,
+            "id": "T4",
+            "name": "Purple Slime",
+            "breeding_power": 1390,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T4"
+                ],
+                [
+                    "T2",
+                    "T3"
+                ],
+                [
+                    "T2",
+                    "T4"
+                ],
+                [
+                    "T3",
+                    "T4"
+                ]
+            ]
+        },
+        "T5": {
+            "index": 218,
+            "id": "T5",
+            "name": "Illuminant Slime",
+            "breeding_power": 1500,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T5"
+                ],
+                [
+                    "T2",
+                    "T5"
+                ],
+                [
+                    "T3",
+                    "T5"
+                ],
+                [
+                    "T4",
+                    "T5"
+                ]
+            ]
+        },
+        "T6": {
+            "index": 219,
+            "id": "T6",
+            "name": "Rainbow Slime",
+            "breeding_power": 1320,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T6"
+                ],
+                [
+                    "T1",
+                    "T8"
+                ],
+                [
+                    "T1",
+                    "T9"
+                ],
+                [
+                    "T2",
+                    "T6"
+                ],
+                [
+                    "T2",
+                    "T8"
+                ],
+                [
+                    "T2",
+                    "T9"
+                ],
+                [
+                    "T3",
+                    "T6"
+                ],
+                [
+                    "T3",
+                    "T8"
+                ],
+                [
+                    "T3",
+                    "T9"
+                ],
+                [
+                    "T4",
+                    "T6"
+                ],
+                [
+                    "T5",
+                    "T6"
+                ],
+                [
+                    "T5",
+                    "T8"
+                ],
+                [
+                    "T5",
+                    "T9"
+                ],
+                [
+                    "T6",
+                    "T7"
+                ],
+                [
+                    "T6",
+                    "T8"
+                ],
+                [
+                    "T6",
+                    "T9"
+                ]
+            ]
+        },
+        "T7": {
+            "index": 220,
+            "id": "T7",
+            "name": "Enchanted Sword",
+            "breeding_power": 1380,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T7"
+                ],
+                [
+                    "T2",
+                    "T7"
+                ],
+                [
+                    "T3",
+                    "T7"
+                ],
+                [
+                    "T4",
+                    "T7"
+                ],
+                [
+                    "T5",
+                    "T7"
+                ],
+                [
+                    "T7",
+                    "T8"
+                ],
+                [
+                    "T7",
+                    "T9"
+                ]
+            ]
+        },
+        "T8": {
+            "index": 221,
+            "id": "T8",
+            "name": "Cave Bat",
+            "breeding_power": 1340,
+            "unique": true
+        },
+        "T9": {
+            "index": 222,
+            "id": "T9",
+            "name": "Illuminant Bat",
+            "breeding_power": 1250,
+            "unique": true,
+            "parents": [
+                [
+                    "T4",
+                    "T8"
+                ],
+                [
+                    "T4",
+                    "T9"
+                ],
+                [
+                    "T8",
+                    "T9"
+                ]
+            ]
+        },
+        "T10": {
+            "index": 223,
+            "id": "T10",
+            "name": "Eye of Cthulhu",
+            "breeding_power": 1380,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T10"
+                ],
+                [
+                    "T2",
+                    "T10"
+                ],
+                [
+                    "T3",
+                    "T10"
+                ],
+                [
+                    "T4",
+                    "T10"
+                ],
+                [
+                    "T5",
+                    "T10"
+                ],
+                [
+                    "T6",
+                    "T10"
+                ],
+                [
+                    "T7",
+                    "T10"
+                ],
+                [
+                    "T8",
+                    "T10"
+                ],
+                [
+                    "T9",
+                    "T10"
+                ],
+                [
+                    "T10",
+                    "T11"
+                ]
+            ]
+        },
+        "T11": {
+            "index": 224,
+            "id": "T11",
+            "name": "Demon Eye",
+            "breeding_power": 1390,
+            "unique": true,
+            "parents": [
+                [
+                    "T1",
+                    "T11"
+                ],
+                [
+                    "T2",
+                    "T11"
+                ],
+                [
+                    "T3",
+                    "T11"
+                ],
+                [
+                    "T4",
+                    "T11"
+                ],
+                [
+                    "T5",
+                    "T11"
+                ],
+                [
+                    "T6",
+                    "T11"
+                ],
+                [
+                    "T7",
+                    "T11"
+                ],
+                [
+                    "T8",
+                    "T11"
+                ],
+                [
+                    "T9",
+                    "T11"
+                ]
+            ]
+        }
+    },
+    "passives": [
+        {
+            "name": "Remarkable Craftsmanship",
+            "rank": 4
+        },
+        {
+            "name": "Diamond Body",
+            "rank": 4
+        },
+        {
+            "name": "Lucky",
+            "rank": 4
+        },
+        {
+            "name": "Legend",
+            "rank": 4
+        },
+        {
+            "name": "Siren of the Void",
+            "rank": 4
+        },
+        {
+            "name": "Eternal Flame",
+            "rank": 4
+        },
+        {
+            "name": "Invader",
+            "rank": 4
+        },
+        {
+            "name": "Demon God",
+            "rank": 4
+        },
+        {
+            "name": "Mastery of Fasting",
+            "rank": 4
+        },
+        {
+            "name": "Heart of the Immovable King",
+            "rank": 4
+        },
+        {
+            "name": "Swift",
+            "rank": 4
+        },
+        {
+            "name": "Eternal Engine",
+            "rank": 4
+        },
+        {
+            "name": "Vampiric",
+            "rank": 4
+        },
+        {
+            "name": "Lunker",
+            "rank": 4
+        },
+        {
+            "name": "King of the Waves",
+            "rank": 4
+        },
+        {
+            "name": "Artisan",
+            "rank": 3
+        },
+        {
+            "name": "Burly Body",
+            "rank": 3
+        },
+        {
+            "name": "Ferocious",
+            "rank": 3
+        },
+        {
+            "name": "Vanguard",
+            "rank": 3
+        },
+        {
+            "name": "Stronghold Strategist",
+            "rank": 3
+        },
+        {
+            "name": "Motivational Leader",
+            "rank": 3
+        },
+        {
+            "name": "Mine Foreman",
+            "rank": 3
+        },
+        {
+            "name": "Logging Foreman",
+            "rank": 3
+        },
+        {
+            "name": "Diet Lover",
+            "rank": 3
+        },
+        {
+            "name": "Workaholic",
+            "rank": 3
+        },
+        {
+            "name": "Celestial Emperor",
+            "rank": 3
+        },
+        {
+            "name": "Flame Emperor",
+            "rank": 3
+        },
+        {
+            "name": "Lord of the Sea",
+            "rank": 3
+        },
+        {
+            "name": "Lord of Lightning",
+            "rank": 3
+        },
+        {
+            "name": "Spirit Emperor",
+            "rank": 3
+        },
+        {
+            "name": "Ice Emperor",
+            "rank": 3
+        },
+        {
+            "name": "Earth Emperor",
+            "rank": 3
+        },
+        {
+            "name": "Lord of the Underworld",
+            "rank": 3
+        },
+        {
+            "name": "Divine Dragon",
+            "rank": 3
+        },
+        {
+            "name": "Runner",
+            "rank": 3
+        },
+        {
+            "name": "Philanthropist",
+            "rank": 3
+        },
+        {
+            "name": "Serenity",
+            "rank": 3
+        },
+        {
+            "name": "Infinite Stamina",
+            "rank": 3
+        },
+        {
+            "name": "Noble",
+            "rank": 3
+        },
+        {
+            "name": "Ace Swimmer",
+            "rank": 3
+        },
+        {
+            "name": "Musclehead",
+            "rank": 2
+        },
+        {
+            "name": "Serious",
+            "rank": 1
+        },
+        {
+            "name": "Hard Skin",
+            "rank": 1
+        },
+        {
+            "name": "Brave",
+            "rank": 1
+        },
+        {
+            "name": "Hooligan",
+            "rank": 1
+        },
+        {
+            "name": "Conceited",
+            "rank": 1
+        },
+        {
+            "name": "Sadist",
+            "rank": 1
+        },
+        {
+            "name": "Masochist",
+            "rank": 1
+        },
+        {
+            "name": "Work Slave",
+            "rank": 1
+        },
+        {
+            "name": "Aggressive",
+            "rank": 1
+        },
+        {
+            "name": "Abnormal",
+            "rank": 1
+        },
+        {
+            "name": "Suntan Lover",
+            "rank": 1
+        },
+        {
+            "name": "Waterproof",
+            "rank": 1
+        },
+        {
+            "name": "Insulated Body",
+            "rank": 1
+        },
+        {
+            "name": "Botanical Barrier",
+            "rank": 1
+        },
+        {
+            "name": "Heated Body",
+            "rank": 1
+        },
+        {
+            "name": "Earthquake Resistant",
+            "rank": 1
+        },
+        {
+            "name": "Cheery",
+            "rank": 1
+        },
+        {
+            "name": "Dragonkiller",
+            "rank": 1
+        },
+        {
+            "name": "Zen Mind",
+            "rank": 1
+        },
+        {
+            "name": "Pyromaniac",
+            "rank": 1
+        },
+        {
+            "name": "Hydromaniac",
+            "rank": 1
+        },
+        {
+            "name": "Capacitor",
+            "rank": 1
+        },
+        {
+            "name": "Fragrant Foliage",
+            "rank": 1
+        },
+        {
+            "name": "Coldblooded",
+            "rank": 1
+        },
+        {
+            "name": "Power of Gaia",
+            "rank": 1
+        },
+        {
+            "name": "Veil of Darkness",
+            "rank": 1
+        },
+        {
+            "name": "Blood of the Dragon",
+            "rank": 1
+        },
+        {
+            "name": "Dainty Eater",
+            "rank": 1
+        },
+        {
+            "name": "Positive Thinker",
+            "rank": 1
+        },
+        {
+            "name": "Nimble",
+            "rank": 1
+        },
+        {
+            "name": "Nocturnal",
+            "rank": 1
+        },
+        {
+            "name": "Impatient",
+            "rank": 1
+        },
+        {
+            "name": "Fit as a Fiddle",
+            "rank": 1
+        },
+        {
+            "name": "Fine Furs",
+            "rank": 1
+        },
+        {
+            "name": "Otherworldly Cells",
+            "rank": 1
+        },
+        {
+            "name": "Sleek Stroke",
+            "rank": 1
+        },
+        {
+            "name": "Clumsy",
+            "rank": -1
+        },
+        {
+            "name": "Downtrodden",
+            "rank": -1
+        },
+        {
+            "name": "Coward",
+            "rank": -1
+        },
+        {
+            "name": "Glutton",
+            "rank": -1
+        },
+        {
+            "name": "Unstable",
+            "rank": -1
+        },
+        {
+            "name": "Mercy Hit",
+            "rank": -1
+        },
+        {
+            "name": "Easygoing",
+            "rank": -1
+        },
+        {
+            "name": "Sickly",
+            "rank": -1
+        },
+        {
+            "name": "Shabby",
+            "rank": -1
+        },
+        {
+            "name": "Bottomless Stomach",
+            "rank": -2
+        },
+        {
+            "name": "Destructive",
+            "rank": -2
+        },
+        {
+            "name": "Slacker",
+            "rank": -3
+        },
+        {
+            "name": "Brittle",
+            "rank": -3
+        },
+        {
+            "name": "Pacifist",
+            "rank": -3
+        }
+    ]
+}

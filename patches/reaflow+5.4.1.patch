@@ -1,0 +1,26 @@
+diff --git a/node_modules/reaflow/dist/index.js b/node_modules/reaflow/dist/index.js
+index 0a3fa2a..8c0575d 100644
+--- a/node_modules/reaflow/dist/index.js
++++ b/node_modules/reaflow/dist/index.js
+@@ -436,7 +436,7 @@ const getElk = async () => {
+     });
+     return elkInstance;
+   } else {
+-    const ELKModule = await import("elkjs/lib/elk-api");
++    const ELKModule = await import("elkjs/lib/elk-api.js");
+     elkInstance = new ELKModule.default({
+       algorithms: ["layered"],
+       workerFactory: () => {
+diff --git a/node_modules/reaflow/dist/index.umd.cjs b/node_modules/reaflow/dist/index.umd.cjs
+index b8bdc42..a1a4dab 100644
+--- a/node_modules/reaflow/dist/index.umd.cjs
++++ b/node_modules/reaflow/dist/index.umd.cjs
+@@ -424,7 +424,7 @@
+       });
+       return elkInstance;
+     } else {
+-      const ELKModule = await import("elkjs/lib/elk-api");
++      const ELKModule = await import("elkjs/lib/elk-api.js");
+       elkInstance = new ELKModule.default({
+         algorithms: ["layered"],
+         workerFactory: () => {
