@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/eldritchtools/palworld-breeding-calculator/static/css/main.0f49da4b.css",
-    "main.js": "/eldritchtools/palworld-breeding-calculator/static/js/main.ef19a98d.js",
-    "static/js/453.0d21c104.chunk.js": "/eldritchtools/palworld-breeding-calculator/static/js/453.0d21c104.chunk.js",
-    "index.html": "/eldritchtools/palworld-breeding-calculator/index.html",
-    "main.0f49da4b.css.map": "/eldritchtools/palworld-breeding-calculator/static/css/main.0f49da4b.css.map",
-    "main.ef19a98d.js.map": "/eldritchtools/palworld-breeding-calculator/static/js/main.ef19a98d.js.map",
-    "453.0d21c104.chunk.js.map": "/eldritchtools/palworld-breeding-calculator/static/js/453.0d21c104.chunk.js.map"
+    "main.css": "/palworld-breeding-calculator/static/css/main.0f49da4b.css",
+    "main.js": "/palworld-breeding-calculator/static/js/main.382a13d8.js",
+    "static/js/453.0d21c104.chunk.js": "/palworld-breeding-calculator/static/js/453.0d21c104.chunk.js",
+    "index.html": "/palworld-breeding-calculator/index.html",
+    "main.0f49da4b.css.map": "/palworld-breeding-calculator/static/css/main.0f49da4b.css.map",
+    "main.382a13d8.js.map": "/palworld-breeding-calculator/static/js/main.382a13d8.js.map",
+    "453.0d21c104.chunk.js.map": "/palworld-breeding-calculator/static/js/453.0d21c104.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0f49da4b.css",
-    "static/js/main.ef19a98d.js"
+    "static/js/main.382a13d8.js"
   ]
 }
