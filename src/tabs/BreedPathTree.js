@@ -11,7 +11,6 @@ import {
     Position,
     getBezierPath,
     BaseEdge,
-    MarkerType,
     Panel,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
@@ -36,18 +35,17 @@ function PalNode({ data: nodeData }) {
 function CustomEdge({ id, sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data }) {
     const curvature = 0.25;
     let [edgePath] = getBezierPath({ sourceX, sourceY, sourcePosition, targetX, targetY, targetPosition, curvature });
-    
-    const style = data && data.color ? {
-        stroke: data.color,
-        strokeWidth: 3
-    } : {
-        stroke: 'grey',
-        strokeWidth: 3
-    };
+    const style = {strokeWidth: 3};
+
+    if (data && data.color) {
+        style["stroke"] = data.color;
+    } else {
+        style["stroke"] = 'grey';
+    }
 
     return (
         <>
-            <BaseEdge id={id} path={edgePath} markerEnd={MarkerType.ArrowClosed} style={style} />
+            <BaseEdge id={id} path={edgePath} style={style} />
         </>
     );
 };
@@ -88,8 +86,8 @@ function FlowChart({ breedCount, nodeList, edgeList, coloredEdges }) {
             return { ...node, position: { x, y } };
         });
 
-        if(handleColoring) {
-            const palColors = nodes.reduce((acc, node) => {acc[node.id] = null; return acc;}, {});
+        if (handleColoring) {
+            const palColors = nodes.reduce((acc, node) => { acc[node.id] = null; return acc; }, {});
             const palCount = Object.keys(palColors).length;
             if (palCount > 1) {
                 var iwanthue = require('iwanthue');
@@ -114,18 +112,18 @@ function FlowChart({ breedCount, nodeList, edgeList, coloredEdges }) {
             }
 
             const newNodes = layoutedNodes.map((node) => {
-                return { ...node, data: {...node.data, color: palColors[node.id] } }
+                return { ...node, data: { ...node.data, color: palColors[node.id] } }
             });
             const newEdges = edges.map((edge) => {
-                return { ...edge, data: {color: palColors[edge.target]} }
+                return { ...edge, data: { color: palColors[edge.target] } }
             });
             return [newNodes, newEdges];
         } else {
             const newNodes = layoutedNodes.map((node) => {
-                return { ...node, data: {...node.data, color: null } }
+                return { ...node, data: { ...node.data, color: null } }
             });
             const newEdges = edges.map((edge) => {
-                return { ...edge, data: {color: null} }
+                return { ...edge, data: { color: null } }
             });
             return [newNodes, newEdges];
         }
@@ -139,7 +137,7 @@ function FlowChart({ breedCount, nodeList, edgeList, coloredEdges }) {
         setFirstLayout(true);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [nodeList, edgeList]);
-    
+
     useLayoutEffect(() => {
         if (nodesInitialized && firstLayout) {
             // ignore if nodes have not yet been measured

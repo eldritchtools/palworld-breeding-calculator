@@ -167,7 +167,7 @@ function SpreadDisplay({ palsByLayer }) {
     }
 }
 
-function PathCalcTab() {
+function BreedableCalcTab() {
     const [palsByLayer, setPalsByLayer] = useState([]);
 
     const handleCompute = (profileData) => {
@@ -185,4 +185,4 @@ function PathCalcTab() {
     </div>;
 }
 
-export default PathCalcTab;
+export default BreedableCalcTab;
