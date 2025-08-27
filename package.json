@@ -1,7 +1,7 @@
 {
   "name": "palworld-breeding-calculator",
   "version": "0.1.0",
-  "homepage": "https://github.com/eldritchtools/palworld-breeding-calculator",
+  "homepage": "https://eldritchtools.github.io/palworld-breeding-calculator/",
   "private": true,
   "dependencies": {
     "@dagrejs/dagre": "^1.1.5",
