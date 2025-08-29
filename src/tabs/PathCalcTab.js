@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import PalSelect from "../components/PalSelect";
 import { findPaths } from "../palLogic/breedingLogic";
 import { checkIdSearchMatch } from "../palLogic/searchLogic";
@@ -21,7 +21,7 @@ function SliderComponent({ value, setValue, min = 1, max = 10 }) {
     );
 }
 
-function SidePanel({ suggestedPals, handleCompute }) {
+function SidePanel({ suggestedPals, handleCompute, isRunning }) {
     const { profileData, setProfileData } = useProfiles();
     const [targetPalId, setTargetPalId] = useState(null);
     const [passives, setPassives] = useState([null, null, null, null]);
@@ -71,33 +71,33 @@ function SidePanel({ suggestedPals, handleCompute }) {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <div data-tooltip-id={"searchThoroughness"} style={{ textAlign: "end", paddingRight: "1em" }}>
-                <span style={{borderBottom: "1px #aaa dashed"}}>Search Thoroughness</span>
-                <Tooltip id={"searchThoroughness"} style={{...tooltipStyle, textAlign: "start"}}>
-                    How thorough the path finding will try to be. <br/>
-                    Lower values are less likely to find optimal paths, but are faster. Higher values are more likely to find optimal paths, but are slower. <br/>
-                    Lower values may still find more optimal paths than higher values. Higher values are just more likely to find them. <br/>
-                    The total number of paths found is softcapped by 100 times this value to reduce computation time. <br/><br/>
-                    
-                    Recommendation: Leave it at the default value of 5 for most cases of breeding a specific pal. <br/> 
-                    Reduce it to 2-3 if you're computing for passives as well and you expect the paths to be long (10+ steps). <br/><br/>
+                <span style={{ borderBottom: "1px #aaa dashed" }}>Search Thoroughness</span>
+                <Tooltip id={"searchThoroughness"} style={{ ...tooltipStyle, textAlign: "start" }}>
+                    How thorough the path finding will try to be. <br />
+                    Lower values are less likely to find optimal paths, but are faster. Higher values are more likely to find optimal paths, but are slower. <br />
+                    Lower values may still find more optimal paths than higher values. Higher values are just more likely to find them. <br />
+                    The total number of paths found is softcapped by 100 times this value to reduce computation time. <br /><br />
+
+                    Recommendation: Leave it at the default value of 5 for most cases of breeding a specific pal. <br />
+                    Reduce it to 2-3 if you're computing for passives as well and you expect the paths to be long (10+ steps). <br /><br />
 
                     Caution: Higher values may cause the computation to take a very very long time especially when also using passives.
                 </Tooltip>
             </div>
             <SliderComponent value={searchThoroughness} setValue={setSearchThoroughness} />
             <div data-tooltip-id={"preferredBreedLimit"} style={{ textAlign: "end", paddingRight: "1em" }}>
-                <span style={{borderBottom: "1px #aaa dashed"}}>Preferred Breed Limit</span>
-                <Tooltip id={"preferredBreedLimit"} style={{...tooltipStyle, textAlign: "start"}}>
-                    The calculator will try to recommend pals that can shorten breed paths that exceed this length or<br/>
-                    to make previously unavailable paths available if they do not exceed this length. <br/><br/>
+                <span style={{ borderBottom: "1px #aaa dashed" }}>Preferred Breed Limit</span>
+                <Tooltip id={"preferredBreedLimit"} style={{ ...tooltipStyle, textAlign: "start" }}>
+                    The calculator will try to recommend pals that can shorten breed paths that exceed this length or<br />
+                    to make previously unavailable paths available if they do not exceed this length. <br /><br />
 
-                    This has no bearing on the paths actually found by the calculator, only on the recommendations that are shown below. <br/><br/>
+                    This has no bearing on the paths actually found by the calculator, only on the recommendations that are shown below. <br /><br />
 
-                    When computing paths with passives, the suggestions will assume that caught pals have no passives. <br/>
-                    All passives will have to come from pals you already own.<br/><br/>
+                    When computing paths with passives, the suggestions will assume that caught pals have no passives. <br />
+                    All passives will have to come from pals you already own.<br /><br />
 
-                    The recommendations are not guaranteed to provide you with new shortest paths, especially if the calculator already found short paths.<br/>
-                    However, generally speaking, if your paths are already short, then lowering this value will likely give better suggestions.<br/>
+                    The recommendations are not guaranteed to provide you with new shortest paths, especially if the calculator already found short paths.<br />
+                    However, generally speaking, if your paths are already short, then lowering this value will likely give better suggestions.<br />
                     Likewise, if your paths are long, increasing this value will likely give better suggestions.
                 </Tooltip>
             </div>
@@ -245,7 +245,9 @@ function SidePanel({ suggestedPals, handleCompute }) {
     </div>)
 
     components.push(<div style={{ display: "flex", justifyContent: "center" }}>
-        <button onClick={() => handleCompute(targetPalId, passives, profileData, searchThoroughness, preferredBreedLimit)} style={{ fontSize: "1.5rem" }}>Compute!</button>
+        <button onClick={() => handleCompute(targetPalId, passives, profileData, searchThoroughness, preferredBreedLimit)} style={{ fontSize: "1.5rem" }}>
+            {isRunning ? "Cancel" : "Compute!"}
+        </button>
     </div>)
 
 
@@ -261,13 +263,13 @@ const getPaths = (paths, start, count) => {
     return result;
 }
 
-function PathsDisplay({ candidatePaths, passives }) {
+function PathsDisplay({ candidatePaths, passives, isRunning }) {
     // const pathsShown = candidatePaths[0].cost < 3 ? 3 : 6;
     const [counter, setCounter] = useState(0);
     const [paths, setPaths] = useState([]);
     const [random, setRandom] = useState(false);
     const [pathsShown, setPathsShown] = useState(3);
-    
+
     const [coloredEdges, setColoredEdges] = useState(false);
     const handleColoredEdgesToggle = () => {
         setColoredEdges(!coloredEdges);
@@ -373,7 +375,10 @@ function PathsDisplay({ candidatePaths, passives }) {
         </div>
     } else {
         return <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <h2>No paths found. Catch more pals or run compute with other settings!</h2>
+            {isRunning ?
+                <h2>Searching for paths...</h2> :
+                <h2>No paths found. Catch more pals or run compute with other settings!</h2>
+            }
         </div>
     }
 }
@@ -382,22 +387,74 @@ function PathCalcTab() {
     const [candidatePaths, setCandidatePaths] = useState([]);
     const [suggestedPals, setSuggestedPals] = useState(null);
     const [passives, setPassives] = useState([]);
+    const [isRunning, setIsRunning] = useState(false);
+    const workerRef = useRef(null);
 
     const handleCompute = (targetPalId, passives, profileData, searchThoroughness, preferredBreedLimit) => {
         // remove nulls
-        const cleanPassives = passives.filter(p => p);
-        setPassives(cleanPassives);
-        const { candidatePaths, suggestedPals } = findPaths(targetPalId, cleanPassives, profileData, searchThoroughness, preferredBreedLimit);
-        setCandidatePaths(candidatePaths)
-        setSuggestedPals(suggestedPals.slice(0, 5));
+        // const cleanPassives = passives.filter(p => p);
+        // setPassives(cleanPassives);
+        // const { candidatePaths, suggestedPals } = findPaths(targetPalId, cleanPassives, profileData, searchThoroughness, preferredBreedLimit);
+        // setCandidatePaths(candidatePaths)
+        // setSuggestedPals(suggestedPals.slice(0, 5));
+
+        if (isRunning) {
+            workerRef.current.postMessage({ command: "cancel" });
+            setIsRunning(false);
+        } else {
+            // remove nulls
+            const cleanPassives = passives.filter(p => p);
+            setPassives(cleanPassives);
+            setCandidatePaths([]);
+            setSuggestedPals(null);
+            const worker = new Worker(new URL("../palLogic/findPathsWorker.js", import.meta.url));
+            workerRef.current = worker;
+            setIsRunning(true);
+
+            worker.onmessage = (e) => {
+                if (e.data.type === "batch") {
+                    setCandidatePaths(prev => {
+                        const merged = [...prev, ...e.data.results];
+                        return merged.sort((a, b) => a.cost - b.cost);
+                    });
+                }
+                if (e.data.type === "done") {
+                    setIsRunning(false);
+                    setCandidatePaths(e.data.results.candidatePaths);
+                    setSuggestedPals(e.data.results.suggestedPals.slice(0, 5));
+                    worker.terminate();
+                    workerRef.current = null;
+                }
+            };
+
+            worker.postMessage({
+                command: "start", params: {
+                    targetChildId: targetPalId,
+                    targetPassives: cleanPassives,
+                    profileData: profileData,
+                    searchBeamSize: searchThoroughness,
+                    costThreshold: preferredBreedLimit
+                }
+            });
+        }
     }
+
+    // Cleanup when tab unmounts
+    useEffect(() => {
+        return () => {
+            if (workerRef.current) {
+                workerRef.current.terminate();
+                workerRef.current = null;
+            }
+        };
+    }, []);
 
     return <div style={{ height: "100%", width: "100%", display: "flex" }}>
         <div style={{ height: "100%", width: "30%" }}>
-            <SidePanel suggestedPals={suggestedPals} handleCompute={handleCompute} />
+            <SidePanel suggestedPals={suggestedPals} handleCompute={handleCompute} isRunning={isRunning} />
         </div>
         <div style={{ height: "100%", width: "70%" }}>
-            <PathsDisplay candidatePaths={candidatePaths} passives={passives} />
+            <PathsDisplay candidatePaths={candidatePaths} passives={passives} isRunning={isRunning} />
         </div>
     </div>;
 }
