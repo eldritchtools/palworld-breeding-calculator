@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import PalSelect from "../components/PalSelect";
-import { findPaths } from "../palLogic/breedingLogic";
 import { checkIdSearchMatch } from "../palLogic/searchLogic";
 import { PalIcon } from "../components/PalIcon";
 
