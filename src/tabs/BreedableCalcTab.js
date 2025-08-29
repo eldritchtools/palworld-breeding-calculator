@@ -7,6 +7,7 @@ import data from '../data/data.json';
 import { useProfiles } from "../profileProvider";
 import { Tooltip } from "react-tooltip";
 import { palEquationTextStyle, tooltipStyle } from "../styles";
+import { sortFromIds } from "../palLogic/sortLogic";
 
 function SidePanel({ handleCompute }) {
     const { profileData, setProfileData } = useProfiles();
@@ -30,7 +31,7 @@ function SidePanel({ handleCompute }) {
     const filteredOwned = useMemo(() => Object.entries(profileData.pals).filter(([palId, passives]) => {
         if (ownedSearch === "") return true;
         return checkIdSearchMatch(ownedSearch, palId);
-    }).map(([palId, _]) => palId), [profileData.pals, ownedSearch]);
+    }).sort((a, b) => sortFromIds(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch]);
 
     components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "43%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
@@ -94,7 +95,7 @@ function SidePanel({ handleCompute }) {
             if (palId in profileData.pals) return false;
             if (unownedSearch === "") return true;
             return checkIdSearchMatch(unownedSearch, palId);
-        })
+        }).sort((a, b) => sortFromIds(a, b))
     }, [profileData.pals, unownedSearch]);
 
     components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "45%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>

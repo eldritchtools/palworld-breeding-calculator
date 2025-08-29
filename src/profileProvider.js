@@ -66,12 +66,18 @@ export function ProfileProvider({ children }) {
         if (!name) return;
         if (name === "default") {
             // Return default profile to its default state instead of deleteing
-            localStorage.setItem(`profile-default`, JSON.stringify(migrateProfile()));
+            const defaultProfile = migrateProfile();
+            localStorage.setItem(`profile-default`, JSON.stringify(defaultProfile));
+            if (currentProfile === "default") {
+                setProfileData(defaultProfile);
+            }
             return;
         }
         localStorage.removeItem(`profile-${name}`);
         setProfiles(profiles => profiles.filter(p => p !== name));
-        if (name === currentProfile) setCurrentProfile("default");
+        if (name === currentProfile) {
+            switchProfile("default");
+        }
     }
 
     const value = {

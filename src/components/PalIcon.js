@@ -15,8 +15,8 @@ function PalIcon({ id = null, pal = null, circle = false, size = null, scale = n
 
     const imgComponent = <div style={{ display: "flex", height: computedSize, width: computedSize }}>
         <div style={{ position: "relative", height: computedSize, width: computedSize }}>
-            <img src={`${ASSETS_ROOT}/icons/${palData.name}.png`} alt={palData.name} title={palData.name} style={style} />
-            {showPalNumber ? <span style={{ fontSize: "1em", color: "#aaa", position: "absolute", top: "0%", left: "0%", fontWeight: "bold" }}>{palData.id}</span> : null}
+            <img src={`${ASSETS_ROOT}/icons/${palData.iconPath}`} alt={palData.name} title={palData.name} style={style} />
+            {showPalNumber && palData.no !== "-1" ? <span style={{ fontSize: "1em", color: "#aaa", position: "absolute", top: "0%", left: "0%", fontWeight: "bold" }}>{palData.no}</span> : null}
         </div>
     </div>
 

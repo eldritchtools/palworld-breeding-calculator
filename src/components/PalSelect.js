@@ -10,11 +10,12 @@ const options = Object.entries(data.pals).map(([id, pal]) => {
         value: id,
         label: <div style={{ display: "flex", flexDirection: "row", gap: "0.5rem", alignItems: "center" }}>
             <PalIcon pal={pal} size={32} />
-            <span>{pal.name} ({id})</span>
+            <span>{pal.name}{pal.no !== "-1" ? ` (${pal.no})` : null}</span>
         </div>,
         name: pal.name,
-        index: pal.index,
-        id: id
+        index: pal.sortIndex,
+        id: id,
+        no: pal.no
     }
 }).sort((a, b) => a.index - b.index);
 

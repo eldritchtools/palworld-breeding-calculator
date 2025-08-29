@@ -4,6 +4,7 @@ import ParentCalcTab from './tabs/ParentCalcTab';
 import ChildCalcTab from './tabs/ChildCalcTab';
 import PathCalcTab from './tabs/PathCalcTab';
 import BreedableCalcTab from './tabs/BreedableCalcTab';
+// import BreedingSnippetsTab from './tabs/BreedingSnippetsTab';
 import ProfilesTab from './tabs/ProfilesTab';
 import { ProfileProvider } from './profileProvider';
 import { Tooltip } from 'react-tooltip';
@@ -44,6 +45,12 @@ function App() {
                                     Find what pals you can breed based on the pals you own
                                 </Tooltip>
                             </Tab>
+                            {/* <Tab className="tab" data-tooltip-id={"breedingSnippetsTab"}>
+                                Breeding Snippets
+                                <Tooltip id={"breedingSnippetsTab"} style={tooltipNormalStyle}>
+                                    Short snippets on how breeding works
+                                </Tooltip>
+                            </Tab> */}
                             <Tab className="tab" data-tooltip-id={"profilesTab"}>
                                 Profiles
                                 <Tooltip id={"profilesTab"} style={tooltipNormalStyle}>
@@ -56,6 +63,7 @@ function App() {
                         <TabPanel className="tab-panel"><ChildCalcTab /></TabPanel>
                         <TabPanel className="tab-panel"><PathCalcTab /></TabPanel>
                         <TabPanel className="tab-panel"><BreedableCalcTab /></TabPanel>
+                        {/* <TabPanel className="tab-panel"><BreedingSnippetsTab /></TabPanel> */}
                         <TabPanel className="tab-panel"><ProfilesTab /></TabPanel>
                     </Tabs>
                 </header>

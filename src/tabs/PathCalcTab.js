@@ -10,6 +10,7 @@ import { useProfiles } from "../profileProvider";
 import BreedPathTree from "./BreedPathTree";
 import { Tooltip } from "react-tooltip";
 import { tooltipStyle } from "../styles";
+import { sortFromIds } from "../palLogic/sortLogic";
 
 function SliderComponent({ value, setValue, min = 1, max = 10 }) {
     return (
@@ -129,7 +130,7 @@ function SidePanel({ suggestedPals, handleCompute }) {
         if (menuSetting && !passives.includes(menuSetting)) return false;
         if (ownedSearch === "") return true;
         return checkIdSearchMatch(ownedSearch, palId);
-    }).map(([palId, _]) => palId), [profileData.pals, ownedSearch, menuSetting]);
+    }).sort((a, b) => sortFromIds(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch, menuSetting]);
 
     components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "30%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
@@ -210,14 +211,14 @@ function SidePanel({ suggestedPals, handleCompute }) {
                 if (passives.includes(menuSetting)) return false;
                 if (unownedSearch === "") return true;
                 return checkIdSearchMatch(unownedSearch, palId);
-            }).map(([palId, _]) => palId);
+            }).sort((a, b) => sortFromIds(a[0], b[0])).map(([palId, _]) => palId);
         } else {
             return Object.keys(data.pals).filter(palId => {
                 if (palId in profileData.pals) return false;
                 if (suggestedPals && suggestedPals.some(suggestion => palId === suggestion.id)) return false;
                 if (unownedSearch === "") return true;
                 return checkIdSearchMatch(unownedSearch, palId);
-            })
+            }).sort((a, b) => sortFromIds(a, b))
         }
     }, [profileData.pals, suggestedPals, unownedSearch, menuSetting]);
 

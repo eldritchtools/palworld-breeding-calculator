@@ -2,7 +2,7 @@ import PriorityQueue from "js-priority-queue";
 import data from "../data/data.json";
 import { deconstructPalMaskId, getPairId, getPalMaskId } from "./palLogic";
 
-const allPalsByBreedPower = Object.values(data.pals).sort((a, b) => a.breeding_power - b.breeding_power);
+const allPalsByBreedPower = Object.values(data.pals).sort((a, b) => a.breedingPower - b.breedingPower);
 const idToAllBreedPowerIndex = allPalsByBreedPower.reduce((acc, pal, index) => {
     acc[pal.id] = index;
     return acc;
@@ -33,19 +33,19 @@ function checkUniquePair(parent1, parent2) {
 
 function computeBabyPower(parent1, parent2) {
     // floor(x/2) is the same as x >> 1
-    return (parent1.breeding_power + parent2.breeding_power + 1) >> 1;
+    return (parent1.breedingPower + parent2.breedingPower + 1) >> 1;
 }
 
 function comparePowerGap(babyPower, option1, option2) {
-    const diff1 = Math.abs(babyPower - option1.breeding_power);
-    const diff2 = Math.abs(babyPower - option2.breeding_power);
-    return (diff1 < diff2 || (diff1 === diff2 && option1.index < option2.index));
+    const diff1 = Math.abs(babyPower - option1.breedingPower);
+    const diff2 = Math.abs(babyPower - option2.breedingPower);
+    return (diff1 < diff2 || (diff1 === diff2 && option1.tiebreakIndex < option2.tiebreakIndex));
 }
 
 function sortPairList(list) {
     return list.sort(([a1, a2], [b1, b2]) => {
-        if (a1.id === b1.id) return a2.index - b2.index;
-        return a1.index - b1.index;
+        if (a1.id === b1.id) return a2.sortIndex - b2.sortIndex;
+        return a1.sortIndex - b1.sortIndex;
     })
 }
 
@@ -54,10 +54,9 @@ function getChildren(parentId1, parentId2) {
         return {};
     } else if (parentId1 === null || parentId2 === null) {
         const parent = parentId1 ? data.pals[parentId1] : data.pals[parentId2];
-        const results = { [parent.id]: [[parent, parent]] };
+        const results = {};
         let currentIndex = 0;
         Object.values(allPalsByBreedPower).forEach(otherParent => {
-            if (parent.id === otherParent.id) return;
             const uniquePair = checkUniquePair(parent, otherParent);
             if (uniquePair) {
                 uniquePair.forEach(id => {
@@ -82,14 +81,14 @@ function getChildren(parentId1, parentId2) {
     } else {
         const parent1 = data.pals[parentId1];
         const parent2 = data.pals[parentId2];
-        if (parent1.index === parent2.index) return { [parent1.id]: [[parent1, parent2]] };
+        if (parent1.sortIndex === parent2.sortIndex) return { [parent1.id]: [[parent1, parent2]] };
         const uniquePair = checkUniquePair(parent1, parent2);
         if (uniquePair) return uniquePair.reduce((acc, id) => { acc[id] = [[parent1, parent2]]; return acc }, {});
         const babyPower = computeBabyPower(parent1, parent2);
         // binary search with left and right ends starting at the index of the parents since the child is always between them
         // use the left and right ends if the parent isn't in the list
         let L, R = null;
-        if (parent1.breeding_power < parent2.breeding_power) {
+        if (parent1.breedingPower < parent2.breedingPower) {
             L = parent1.unique ? 0 : idToBreedPowerIndex[parent1.id];
             R = parent2.unique ? breedablePalsByBreedPower.length - 1 : idToBreedPowerIndex[parent2.id];
         } else {
@@ -99,7 +98,7 @@ function getChildren(parentId1, parentId2) {
 
         while (R - L > 2) {
             let M = (R + L) >> 1;
-            if (breedablePalsByBreedPower[M].breeding_power < babyPower) L = M;
+            if (breedablePalsByBreedPower[M].breedingPower < babyPower) L = M;
             else R = M;
         }
 
@@ -116,10 +115,7 @@ function getParentPairs(childId, sorted = true) {
     if (!childId) return [];
     const child = data.pals[childId];
     if (child.unique) {
-        if (child.parents)
-            return sortPairList([...child.parents.map(parents => parents.map(p => data.pals[p])), [child, child]]);
-        else
-            return [[child, child]];
+        return sortPairList([...child.parents.map(parents => parents.map(p => data.pals[p]))]);
     } else {
         // the possible partners of every pal to produce the same child is a sliding window
         const pairs = [];
@@ -130,26 +126,28 @@ function getParentPairs(childId, sorted = true) {
         for (let p1 = si; p1 >= 0; p1--) {
             for (let p2 = si; p2 < allPalsByBreedPower.length; p2++) {
                 const babyPower = computeBabyPower(allPalsByBreedPower[p1], allPalsByBreedPower[p2]);
-                const selfDiff = Math.abs(babyPower - child.breeding_power);
+                const selfDiff = Math.abs(babyPower - child.breedingPower);
 
                 if (notFirst) {
-                    const otherDiff = Math.abs(babyPower - breedablePalsByBreedPower[bpi - 1].breeding_power);
-                    if (otherDiff < selfDiff || (otherDiff === selfDiff && breedablePalsByBreedPower[bpi - 1].index < child.index)) {
+                    // move the starting index of the window forward if the pal in the current start is no longer part of it
+                    const otherDiff = Math.abs(babyPower - breedablePalsByBreedPower[bpi - 1].breedingPower);
+                    if (otherDiff < selfDiff || (otherDiff === selfDiff && breedablePalsByBreedPower[bpi - 1].tiebreakIndex < child.tiebreakIndex)) {
                         si++;
                         continue;
                     }
                 }
 
                 if (notLast) {
-                    const otherDiff = Math.abs(babyPower - breedablePalsByBreedPower[bpi + 1].breeding_power);
-                    if (otherDiff < selfDiff || (otherDiff === selfDiff && breedablePalsByBreedPower[bpi + 1].index < child.index)) {
+                    // this is the end of the window for this parent
+                    const otherDiff = Math.abs(babyPower - breedablePalsByBreedPower[bpi + 1].breedingPower);
+                    if (otherDiff < selfDiff || (otherDiff === selfDiff && breedablePalsByBreedPower[bpi + 1].tiebreakIndex < child.tiebreakIndex)) {
                         break;
                     }
                 }
 
                 const parent1 = allPalsByBreedPower[p1];
                 const parent2 = allPalsByBreedPower[p2];
-                if (parent1.index < parent2.index) pairs.push([parent1, parent2]);
+                if (parent1.sortIndex < parent2.sortIndex) pairs.push([parent1, parent2]);
                 else pairs.push([parent2, parent1]);
             }
         }

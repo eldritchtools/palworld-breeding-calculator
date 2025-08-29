@@ -5,11 +5,11 @@ function includesIgnoreCase(s1, s2) {
 }
 
 function checkIdSearchMatch(searchString, id) {
-    return includesIgnoreCase(id, searchString) || includesIgnoreCase(data.pals[id].name, searchString);
+    return includesIgnoreCase(data.pals[id].no, searchString) || includesIgnoreCase(data.pals[id].name, searchString);
 }
 
 function checkPalSearchMatch(searchString, pal) {
-    return includesIgnoreCase(pal.id, searchString) || includesIgnoreCase(pal.name, searchString);
+    return includesIgnoreCase(pal.no, searchString) || includesIgnoreCase(pal.name, searchString);
 }
 
 export { checkIdSearchMatch, checkPalSearchMatch };
