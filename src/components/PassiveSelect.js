@@ -4,7 +4,7 @@ import data from "../data/data.json";
 import { selectStyle } from "../styles";
 import PassiveComponent from "./PassiveComponent";
 
-const options = data.passives.map(({name, rank}) => {
+const options = data.passives.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase())).map(({name, rank}) => {
     return {
         value: name,
         label: <PassiveComponent name={name} rank={rank} />,

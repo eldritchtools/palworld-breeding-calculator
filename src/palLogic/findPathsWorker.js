@@ -19,7 +19,6 @@ self.onmessage = function (e) {
     if (command === "start") {
         findPaths(params);
     } else if (command === "cancel") {
-        console.log("cancel");
         cancelled = true;
     }
 };
@@ -93,7 +92,6 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
     const handleSearchChunk = () => {
         // beam search bfs/dijkstra, early quit when enough candidates have been found or the computation was aborted
         let counter = 0;
-        console.log("trigger search chunk");
         while (queue.length > 0 && targetBests.length < targetBestsLimit && !cancelled && counter < SEARCH_CHUNK_LIMIT) {
             counter++;
             const state = queue.dequeue();
@@ -184,8 +182,6 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
             self.postMessage({ type: "batch", results: batch });
             batch.length = 0;
         }
-
-        console.log("counter", counter);
 
         if (queue.length === 0 || targetBests.length >= targetBestsLimit || cancelled) {
             // legitimately ended

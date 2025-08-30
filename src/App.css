@@ -118,3 +118,23 @@ input[type="number"] {
     scrollbar-color: rgba(155, 155, 155, 0.5) transparent; */
     /* border: 2px solid gray; */
 }
+
+a {
+  color: #4da6ff; /* bright blue */
+  text-decoration: underline;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: #80cfff; /* lighter blue on hover */
+  text-shadow: 0 0 4px rgba(128, 207, 255, 0.6); /* subtle glow */
+}
+
+a:visited {
+  color: #b366ff; /* purple that's still bright enough */
+}
+
+a:active {
+  color: #ffcc66; /* amber for click */
+}

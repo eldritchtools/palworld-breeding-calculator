@@ -35,7 +35,7 @@ function PalNode({ data: nodeData }) {
 function CustomEdge({ id, sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, data }) {
     const curvature = 0.25;
     let [edgePath] = getBezierPath({ sourceX, sourceY, sourcePosition, targetX, targetY, targetPosition, curvature });
-    const style = {strokeWidth: 3};
+    const style = { strokeWidth: 3 };
 
     if (data && data.color) {
         style["stroke"] = data.color;
@@ -53,7 +53,7 @@ function CustomEdge({ id, sourceX, sourceY, targetX, targetY, sourcePosition, ta
 const nodeTypes = { "pal": PalNode };
 const edgeTypes = { "custom": CustomEdge };
 
-function FlowChart({ breedCount, nodeList, edgeList, coloredEdges }) {
+function FlowChart({ breedCount, nodeList, edgeList, coloredEdges, showPanel }) {
     const { fitView } = useReactFlow();
     const [nodes, setNodes, onNodesChange] = useNodesState(nodeList);
     const [edges, setEdges, onEdgesChange] = useEdgesState(edgeList);
@@ -161,11 +161,13 @@ function FlowChart({ breedCount, nodeList, edgeList, coloredEdges }) {
         fitView
         proOptions={{ hideAttribution: true }}
     >
-        <Panel position="top-left" style={{ background: "rgba(0, 0, 0, 0.5)", padding: "5px" }}>Breed count: {breedCount}</Panel>
+        {showPanel ?
+            <Panel position="top-left" style={{ background: "rgba(0, 0, 0, 0.5)", padding: "5px" }}>Breed count: {breedCount}</Panel> :
+            null}
     </ReactFlow>;
 }
 
-function BreedPathTree({ breedPath, passives, coloredEdges }) {
+function BreedPathTree({ breedPath, passives, coloredEdges, showPanel = true }) {
     const [nodes, edges] = useMemo(() => {
         const nodes = {};
         const edges = [];
@@ -211,7 +213,7 @@ function BreedPathTree({ breedPath, passives, coloredEdges }) {
     }, [breedPath, passives]);
 
     return <ReactFlowProvider>
-        <FlowChart breedCount={Object.keys(breedPath).length} nodeList={Object.values(nodes)} edgeList={edges} coloredEdges={coloredEdges} />
+        <FlowChart breedCount={Object.keys(breedPath).length} nodeList={Object.values(nodes)} edgeList={edges} coloredEdges={coloredEdges} showPanel={showPanel} />
     </ReactFlowProvider>
 }
 

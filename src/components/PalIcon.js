@@ -5,7 +5,7 @@ const ASSETS_ROOT = `${process.env.PUBLIC_URL}/assets`;
 function PalIcon({ id = null, pal = null, circle = false, size = null, scale = null, showName = false, showPalNumber = false, highlighted = false, wrapName = false }) {
     const computedSize = size ? `${size}px` : (scale ? `${512 * scale}px` : "80px");
     const style = { width: computedSize, height: computedSize, borderRadius: circle ? "50%" : "0" };
-    if (circle) style["border"] = "1px rgba(255, 255, 255, 0.3) solid";;
+    if (circle) style["border"] = "1px rgba(255, 255, 255, 0.3) solid";
     if (highlighted) style["boxShadow"] = "0 0 8px 2px rgba(255, 255, 0, 0.8)";
 
     if (!id && !pal) {

@@ -274,7 +274,7 @@ function PassivesPanel() {
         });
     }
 
-    return <div style={{ display: "flex", flexDirection: "column", width: "80%", height: "100%", alignItems: "center", gap: "0.5rem" }}>
+    return <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", alignItems: "center", gap: "0.5rem" }}>
         <div style={{ display: "flex", flexDirection: "row", width: "80%", alignItems: "center", gap: "1rem" }}>
             <PalIcon id={selectedPalId} circle={true} />
             <div style={{ flex: 1 }}>
@@ -282,14 +282,13 @@ function PassivesPanel() {
             </div>
         </div>
         <div style={{ border: "1px #aaa solid", borderRadius: "5px", flex: 1, minHeight: 0, width: "100%", padding: "0.5rem" }}>
-
             {
                 selectedPalId ?
                     selectedPalId in profileData.pals ?
-                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
                             <span>Passives owned by this type of pal</span>
                             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "0.2rem", width: "100%", height: "100%" }}>
-                                {profileData.pals[selectedPalId].map(passive => <PassiveComponent name={passive} addBorder={true} />)}
+                                {profileData.pals[selectedPalId].sort().map(passive => <PassiveComponent name={passive} addBorder={true} />)}
                             </div>
                         </div> :
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
