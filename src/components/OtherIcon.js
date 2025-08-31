@@ -20,7 +20,8 @@ const OtherIconObjects = {
     female: "Female",
     male: "Male",
     commonEgg: "Common Egg",
-    palSurgeryTable: "Pal Surgery Table"
+    palSurgeryTable: "Pal Surgery Table",
+    dimensionalPalStorage: "Dimensional Pal Storage"
 }
 
 const OtherIconPaths = {
@@ -43,7 +44,8 @@ const OtherIconPaths = {
     "Female": "T_Icon_PanGender_Female",
     "Male": "T_Icon_PanGender_Male",
     "Common Egg": "Common_Egg_icon",
-    "Pal Surgery Table": "T_icon_buildObject_OperatingTable"
+    "Pal Surgery Table": "T_icon_buildObject_OperatingTable",
+    "Dimensional Pal Storage": "T_icon_buildObject_DimensionPalStorage"
 }
 
 function OtherIcon({ object, count=null }) {
