@@ -61,7 +61,7 @@ function Footer() {
         <footer style={footerStyle}>
             <div style={{ maxWidth: "700px", margin: "0 auto" }}>
                 <p>
-                    This site is a fan-made web tool bulit to help with breeding planning for Palworld players.
+                    This site is a fan-made web tool built to help with breeding planning for Palworld players.
                     It is designed as a free fan-made project for the community.
                     <br /><br />
                     I create web tools for various games that will hopefully be useful to people. If you'd like
