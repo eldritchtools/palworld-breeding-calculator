@@ -21,7 +21,8 @@
     "react-tabs": "^6.1.0",
     "react-tooltip": "^5.29.1",
     "use-debounced-effect": "^2.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@eldritchtools/shared-components": "github:eldritchtools/shared-components"
   },
   "scripts": {
     "predeploy": "npm run build",

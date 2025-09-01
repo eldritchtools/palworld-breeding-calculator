@@ -9,10 +9,10 @@ import ProfilesTab from './tabs/ProfilesTab';
 import { ProfileProvider } from './profileProvider';
 import { Tooltip } from 'react-tooltip';
 import { tooltipStyle } from './styles';
-import Footer from './Footer';
+import { Footer } from '@eldritchtools/shared-components';
 
 function App() {
-    const tooltipNormalStyle = {...tooltipStyle, fontWeight: "normal"};
+    const tooltipNormalStyle = { ...tooltipStyle, fontWeight: "normal" };
 
     return (
         <ProfileProvider>
@@ -67,7 +67,12 @@ function App() {
                         <TabPanel className="tab-panel"><ProfilesTab /></TabPanel>
                     </Tabs>
                 </header>
-                <Footer />
+                <Footer
+                    description={"This site is a fan-made web tool built to help with breeding planning for Palworld players."}
+                    gameName={"Palworld"}
+                    developerName={"Pocketpair"}
+                    githubLink={"https://github.com/eldritchtools/palworld-breeding-calculator"}
+                />
             </div>
         </ProfileProvider>
     );
