@@ -5,10 +5,10 @@ import { PalIcon } from "../components/PalIcon";
 
 import data from '../data/data.json';
 import PassiveSelect from "../components/PassiveSelect";
-import { useProfiles } from "../profileProvider";
 import PassiveComponent from "../components/PassiveComponent";
 import { Modal } from "../components/Modal";
 import { sortFromIds } from "../palLogic/sortLogic";
+import { useProfiles } from "@eldritchtools/shared-components";
 
 function ProfilesPanel() {
     const { profiles, currentProfile, addProfile, switchProfile, copyProfile, deleteProfile } = useProfiles();
@@ -20,7 +20,9 @@ function ProfilesPanel() {
 
     const handleSwitchProfileButton = () => {
         if (!selected) return;
-        switchProfile(selected);
+        switchProfile(selected).catch(err => {
+            console.error(err.message);
+        });
     }
 
     const handleCopyProfileButton = () => {
@@ -44,19 +46,25 @@ function ProfilesPanel() {
     }
 
     const handleAddProfile = () => {
-        addProfile(name);
+        addProfile(name).catch(err => {
+            console.error(err.message);
+        });
         setName("");
         setAddProfileIsOpen(false);
     }
 
     const handleCopyProfile = () => {
-        copyProfile(selected, name);
+        copyProfile(selected, name).catch(err => {
+            console.error(err.message);
+        });
         setName("");
         setCopyProfileIsOpen(false);
     }
 
     const handleDeleteProfile = () => {
-        deleteProfile(selected);
+        deleteProfile(selected).catch(err => {
+            console.error(err.message);
+        });
         setDeleteProfileIsOpen(false);
     }
 

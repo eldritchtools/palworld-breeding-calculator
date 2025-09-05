@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@dagrejs/dagre": "^1.1.5",
+    "@eldritchtools/shared-components": "github:eldritchtools/shared-components",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
@@ -21,8 +22,7 @@
     "react-tabs": "^6.1.0",
     "react-tooltip": "^5.29.1",
     "use-debounced-effect": "^2.0.1",
-    "web-vitals": "^2.1.4",
-    "@eldritchtools/shared-components": "github:eldritchtools/shared-components"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "predeploy": "npm run build",

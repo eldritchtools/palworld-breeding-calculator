@@ -6,16 +6,29 @@ import PathCalcTab from './tabs/PathCalcTab';
 import BreedableCalcTab from './tabs/BreedableCalcTab';
 import BreedingSnippetsTab from './tabs/BreedingSnippetsTab';
 import ProfilesTab from './tabs/ProfilesTab';
-import { ProfileProvider } from './profileProvider';
 import { Tooltip } from 'react-tooltip';
 import { tooltipStyle } from './styles';
-import { Footer } from '@eldritchtools/shared-components';
+import { Footer, ProfileProvider } from '@eldritchtools/shared-components';
+import migrateProfile, { firstMigrate } from './migrateProfile';
+import { useEffect, useState } from 'react';
+
+const tooltipNormalStyle = { ...tooltipStyle, fontWeight: "normal" };
 
 function App() {
-    const tooltipNormalStyle = { ...tooltipStyle, fontWeight: "normal" };
+    const [migrated, setMigrated] = useState(false);
 
-    return (
-        <ProfileProvider>
+    useEffect(() => {
+        if (!migrated) {
+            firstMigrate().then(() => {
+                setMigrated(true);
+            }).catch(err => {
+                console.error(err.message);
+            });
+        }
+    }, [migrated]);
+
+    return (migrated ?
+        <ProfileProvider dbName={"palworld-breeding-calculator"} migrateProfile={migrateProfile}>
             <div className="App">
                 <header className="App-header">
                     <h2>Palworld Breeding Calculator</h2>
@@ -74,7 +87,8 @@ function App() {
                     githubLink={"https://github.com/eldritchtools/palworld-breeding-calculator"}
                 />
             </div>
-        </ProfileProvider>
+        </ProfileProvider> :
+        null
     );
 }
 

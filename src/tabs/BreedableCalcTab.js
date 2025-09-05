@@ -4,10 +4,10 @@ import { checkIdSearchMatch } from "../palLogic/searchLogic";
 import { PalIcon } from "../components/PalIcon";
 
 import data from '../data/data.json';
-import { useProfiles } from "../profileProvider";
 import { Tooltip } from "react-tooltip";
 import { palEquationTextStyle, tooltipStyle } from "../styles";
 import { sortFromIds } from "../palLogic/sortLogic";
+import { useProfiles } from "@eldritchtools/shared-components";
 
 function SidePanel({ handleCompute }) {
     const { profileData, setProfileData } = useProfiles();

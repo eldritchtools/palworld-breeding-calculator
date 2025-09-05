@@ -5,11 +5,11 @@ import { PalIcon } from "../components/PalIcon";
 
 import data from '../data/data.json';
 import PassiveSelect from "../components/PassiveSelect";
-import { useProfiles } from "../profileProvider";
 import BreedPathTree from "./BreedPathTree";
 import { Tooltip } from "react-tooltip";
 import { tooltipStyle } from "../styles";
 import { sortFromIds } from "../palLogic/sortLogic";
+import { useProfiles } from "@eldritchtools/shared-components";
 
 function SliderComponent({ value, setValue, min = 1, max = 10 }) {
     return (
