@@ -1,5 +1,5 @@
-import { PalIcon } from "../../components/PalIcon";
 import SnippetContainer from "./SnippetContainer";
+import { PalIcon } from "@eldritchtools/palworld-shared-library";
 
 function Braloha() {
     return <SnippetContainer title={"Braloha"}>

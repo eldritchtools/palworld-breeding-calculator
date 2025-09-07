@@ -1,7 +1,7 @@
-import data from "../data/data.json";
 import { getPairId } from "./palLogic";
+import { pals } from "@eldritchtools/palworld-shared-library";
 
-const allPalsByBreedPower = Object.values(data.pals).sort((a, b) => a.breedingPower - b.breedingPower);
+const allPalsByBreedPower = Object.values(pals).sort((a, b) => a.breedingPower - b.breedingPower);
 const idToAllBreedPowerIndex = allPalsByBreedPower.reduce((acc, pal, index) => {
     acc[pal.id] = index;
     return acc;
@@ -13,10 +13,10 @@ const idToBreedPowerIndex = breedablePalsByBreedPower.reduce((acc, pal, index) =
     return acc;
 }, {});
 
-const uniquePairs = Object.values(data.pals).reduce((acc, pal) => {
+const uniquePairs = Object.values(pals).reduce((acc, pal) => {
     if (pal.parents) {
         pal.parents.forEach(parents => {
-            const pairId = getPairId(data.pals[parents[0]], data.pals[parents[1]]);
+            const pairId = getPairId(pals[parents[0]], pals[parents[1]]);
             if (pairId in acc) acc[pairId].push(pal.id);
             else acc[pairId] = [pal.id];
         });
@@ -52,7 +52,7 @@ function getChildren(parentId1, parentId2) {
     if (parentId1 === null && parentId2 === null) {
         return {};
     } else if (parentId1 === null || parentId2 === null) {
-        const parent = parentId1 ? data.pals[parentId1] : data.pals[parentId2];
+        const parent = parentId1 ? pals[parentId1] : pals[parentId2];
         const results = {};
         let currentIndex = 0;
         Object.values(allPalsByBreedPower).forEach(otherParent => {
@@ -78,8 +78,8 @@ function getChildren(parentId1, parentId2) {
             return acc;
         }, {})
     } else {
-        const parent1 = data.pals[parentId1];
-        const parent2 = data.pals[parentId2];
+        const parent1 = pals[parentId1];
+        const parent2 = pals[parentId2];
         if (parent1.sortIndex === parent2.sortIndex) return { [parent1.id]: [[parent1, parent2]] };
         const uniquePair = checkUniquePair(parent1, parent2);
         if (uniquePair) return uniquePair.reduce((acc, id) => { acc[id] = [[parent1, parent2]]; return acc }, {});
@@ -112,9 +112,9 @@ function getChildren(parentId1, parentId2) {
 
 function getParentPairs(childId, sorted = true) {
     if (!childId) return [];
-    const child = data.pals[childId];
+    const child = pals[childId];
     if (child.unique) {
-        return sortPairList([...child.parents.map(parents => parents.map(p => data.pals[p]))]);
+        return sortPairList([...child.parents.map(parents => parents.map(p => pals[p]))]);
     } else {
         // the possible partners of every pal to produce the same child is a sliding window
         const pairs = [];
@@ -172,7 +172,7 @@ function getPalsByLayer(profileData) {
 
     while (queueIndex < queue.length) {
         const palId = queue[queueIndex++];
-        const pal = data.pals[palId];
+        const pal = pals[palId];
 
         // check all possible pairs with the current pal as one of the parents
         let currentIndex = 0;

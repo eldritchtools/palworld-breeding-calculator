@@ -1,5 +1,5 @@
-import { PalIcon } from "../../components/PalIcon";
 import SnippetContainer from "./SnippetContainer";
+import { PalIcon } from "@eldritchtools/palworld-shared-library";
 
 function GettingPassiveYakumo() {
     return <SnippetContainer title={"Getting a Passive on a Pal: Yakumo"}>

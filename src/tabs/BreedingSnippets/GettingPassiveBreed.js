@@ -1,8 +1,6 @@
-import { PalIcon } from "../../components/PalIcon";
-import PassiveComponent from "../../components/PassiveComponent";
 import SnippetContainer from "./SnippetContainer";
 import StaticFlowchart from "./StaticFlowchart";
-
+import { PalIcon, PassiveComponent } from "@eldritchtools/palworld-shared-library";
 
 const nodeStyle = {
     textAlign: "center",

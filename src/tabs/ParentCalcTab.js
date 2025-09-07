@@ -1,11 +1,8 @@
 import { useMemo, useState } from "react";
-import PalSelect from "../components/PalSelect";
 import { getChildren } from "../palLogic/breedingLogic";
-import { checkIdSearchMatch, checkPalSearchMatch } from "../palLogic/searchLogic";
-import { PalIcon } from "../components/PalIcon";
 import { Tooltip } from "react-tooltip";
 import { palEquationTextStyle, tooltipStyle } from "../styles";
-import { sortPalIds } from "../palLogic/sortLogic";
+import { PalIcon, PalSelect, checkIdSearchMatch, checkPalSearchMatch, sortPalIds } from "@eldritchtools/palworld-shared-library";
 
 function ExpandedChildPanel({ childId, parents }) {
     return <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", border: "1px #666 dotted", padding: "0.2rem" }}>

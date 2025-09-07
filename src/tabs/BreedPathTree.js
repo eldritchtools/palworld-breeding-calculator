@@ -14,9 +14,8 @@ import {
     Panel,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import { PalIcon } from '../components/PalIcon';
-import PassiveComponent from '../components/PassiveComponent';
 import { deconstructPalMaskId, getPalMaskId } from '../palLogic/palLogic';
+import { PalIcon, PassiveComponent } from '@eldritchtools/palworld-shared-library';
 
 function PalNode({ data: nodeData }) {
     const { pal, passives } = nodeData;

@@ -1,10 +1,8 @@
 import { useMemo, useState } from "react";
-import PalSelect from "../components/PalSelect";
 import { getParentPairs } from "../palLogic/breedingLogic";
-import { checkPalSearchMatch } from "../palLogic/searchLogic";
 import { sortParentPairs } from "../palLogic/sortLogic";
-import { PalIcon } from "../components/PalIcon";
 import { palEquationTextStyle } from "../styles";
+import { PalIcon, PalSelect, checkPalSearchMatch } from "@eldritchtools/palworld-shared-library";
 
 function ParentsPanel({ childId, parents }) {
     return <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", border: "1px #666 dotted", padding: "0.2rem" }}>

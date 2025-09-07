@@ -1,6 +1,6 @@
 import PriorityQueue from "js-priority-queue";
-import data from "../data/data.json";
 import { deconstructPalMaskId, getPalMaskId } from "./palLogic";
+import { pals } from "@eldritchtools/palworld-shared-library";
 
 import {
     allPalsByBreedPower,
@@ -47,7 +47,7 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
     const visited = {};
     const targetBests = [];
     const targetMask = (1 << targetPassives.length) - 1;
-    bests[getPalMaskId(data.pals[targetChildId], targetMask, targetPassives)] = targetBests;
+    bests[getPalMaskId(pals[targetChildId], targetMask, targetPassives)] = targetBests;
     const targetBestsLimit = 100 * searchBeamSize;
     let batch = [];
 
@@ -84,7 +84,7 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
 
     // insert all initially available pals as starting nodes
     Object.keys(profileData.pals).forEach(id => {
-        const state = insertCandidate(0, data.pals[id], passiveMasks[id], {})
+        const state = insertCandidate(0, pals[id], passiveMasks[id], {})
         if (state) queue.queue(state);
     });
 
@@ -130,7 +130,7 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
                         if (!visited[palMaskId]) continue;
 
                         const newMask = (childId in passiveMasks ? passiveMasks[childId] : 0) | mask | otherMask;
-                        const childPalMaskId = getPalMaskId(data.pals[childId], newMask, targetPassives);
+                        const childPalMaskId = getPalMaskId(pals[childId], newMask, targetPassives);
                         // If the child pal was a needed breed in this pal's path, then ignore this to prevent circular breed paths
                         if (childPalMaskId in path) continue;
 
@@ -166,10 +166,10 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
 
                             if (childId === targetChildId && newMask === (1 << targetPassives.length) - 1) {
                                 // inserting a candidate for the goal
-                                insertCandidate(Object.keys(newPath).length, data.pals[childId], newMask, newPath, true);
+                                insertCandidate(Object.keys(newPath).length, pals[childId], newMask, newPath, true);
                             } else {
                                 // inserting a candidate for further exploration
-                                const newState = insertCandidate(Object.keys(newPath).length, data.pals[childId], newMask, newPath);
+                                const newState = insertCandidate(Object.keys(newPath).length, pals[childId], newMask, newPath);
                                 if (newState) queue.queue(newState);
                             }
                         });
@@ -238,7 +238,7 @@ function findPaths({ targetChildId, targetPassives, profileData, searchBeamSize,
             }
 
             // sort suggested pals by decreasing score
-            const result = { candidatePaths: targetBests, suggestedPals: Object.keys(scores).sort((a, b) => scores[b] - scores[a]).map(a => data.pals[a]) };
+            const result = { candidatePaths: targetBests, suggestedPals: Object.keys(scores).sort((a, b) => scores[b] - scores[a]).map(a => pals[a]) };
             self.postMessage({ type: "done", results: result, cancelled: cancelled });
         } else {
             // just ended due to chunk

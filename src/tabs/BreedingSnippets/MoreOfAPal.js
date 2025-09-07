@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import SnippetContainer from "./SnippetContainer";
-import PalSelect from "../../components/PalSelect";
-import data from "../../data/data.json";
 import { getChildren } from "../../palLogic/breedingLogic";
-import { PalIcon } from "../../components/PalIcon";
 import { palEquationTextStyle } from "../../styles";
+import { pals, PalIcon, PalSelect } from "@eldritchtools/palworld-shared-library";
 
 function MoreOfAPal() {
     const [selectedPalId, setSelectedPalId] = useState(null);
@@ -16,11 +14,11 @@ function MoreOfAPal() {
         setSelectedPalId(x);
         setSeedPalId(null);
         if (x) {
-            const breedingPower = data.pals[x].breedingPower;
-            setSeedPalList(Object.values(data.pals).filter((pal) => pal.breedingPower > breedingPower));
-            const pal = data.pals[x];
+            const breedingPower = pals[x].breedingPower;
+            setSeedPalList(Object.values(pals).filter((pal) => pal.breedingPower > breedingPower));
+            const pal = pals[x];
             if (pal.unique) {
-                setBreedPath(pal.parents.map(([a, b]) => [pal, data.pals[a], data.pals[b]]));
+                setBreedPath(pal.parents.map(([a, b]) => [pal, pals[a], pals[b]]));
             } else {
                 setBreedPath([]);
             }
@@ -33,12 +31,12 @@ function MoreOfAPal() {
     const handleSetSeedPalId = (x) => {
         setSeedPalId(x);
         if (x) {
-            const pal = data.pals[selectedPalId];
-            let currentChild = data.pals[x];
+            const pal = pals[selectedPalId];
+            let currentChild = pals[x];
             const breedPath = [];
             while (true) {
                 const result = Object.entries(getChildren(selectedPalId, currentChild.id))[0];
-                let newChild = data.pals[result[0]];
+                let newChild = pals[result[0]];
                 breedPath.push([newChild, pal, currentChild]);
                 if (newChild.id === selectedPalId || newChild.id === currentChild.id) break;
                 currentChild = newChild;
@@ -81,7 +79,7 @@ function MoreOfAPal() {
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.2rem", paddingTop: "0.5rem" }}>
                     <PalSelect value={selectedPalId} onChange={handleSetPalId} />
                     {selectedPalId ?
-                        (data.pals[selectedPalId].unique ?
+                        (pals[selectedPalId].unique ?
                             "This pal can only be bred with unique combinations" :
                             [
                                 "Higher breeding power pals",

@@ -1,13 +1,10 @@
 import { useMemo, useState } from "react";
 import { getPalsByLayer } from "../palLogic/breedingLogic";
-import { checkIdSearchMatch } from "../palLogic/searchLogic";
-import { PalIcon } from "../components/PalIcon";
 
-import data from '../data/data.json';
 import { Tooltip } from "react-tooltip";
 import { palEquationTextStyle, tooltipStyle } from "../styles";
-import { sortFromIds } from "../palLogic/sortLogic";
 import { useProfiles } from "@eldritchtools/shared-components";
+import { pals, PalIcon, checkIdSearchMatch, palIdSortFunc } from "@eldritchtools/palworld-shared-library";
 
 function SidePanel({ handleCompute }) {
     const { profileData, setProfileData } = useProfiles();
@@ -31,7 +28,7 @@ function SidePanel({ handleCompute }) {
     const filteredOwned = useMemo(() => Object.entries(profileData.pals).filter(([palId, passives]) => {
         if (ownedSearch === "") return true;
         return checkIdSearchMatch(ownedSearch, palId);
-    }).sort((a, b) => sortFromIds(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch]);
+    }).sort((a, b) => palIdSortFunc(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch]);
 
     components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "43%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
@@ -91,11 +88,11 @@ function SidePanel({ handleCompute }) {
     }
 
     const filteredUnowned = useMemo(() => {
-        return Object.keys(data.pals).filter(palId => {
+        return Object.keys(pals).filter(palId => {
             if (palId in profileData.pals) return false;
             if (unownedSearch === "") return true;
             return checkIdSearchMatch(unownedSearch, palId);
-        }).sort((a, b) => sortFromIds(a, b))
+        }).sort((a, b) => palIdSortFunc(a, b))
     }, [profileData.pals, unownedSearch]);
 
     components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "45%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>

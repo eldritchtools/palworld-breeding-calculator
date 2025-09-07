@@ -1,8 +1,8 @@
 import SnippetContainer from "./SnippetContainer";
 import { OtherIcon, OtherIconObjects } from "../../components/OtherIcon";
 import { palEquationTextStyle } from "../../styles";
-import { PalIcon } from "../../components/PalIcon";
 import StaticFlowchart from "./StaticFlowchart";
+import { PalIcon } from "@eldritchtools/palworld-shared-library";
 
 const nodeStyle = {
     textAlign: "center",

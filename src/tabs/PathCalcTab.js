@@ -1,15 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import PalSelect from "../components/PalSelect";
-import { checkIdSearchMatch } from "../palLogic/searchLogic";
-import { PalIcon } from "../components/PalIcon";
 
-import data from '../data/data.json';
-import PassiveSelect from "../components/PassiveSelect";
 import BreedPathTree from "./BreedPathTree";
 import { Tooltip } from "react-tooltip";
 import { tooltipStyle } from "../styles";
-import { sortFromIds } from "../palLogic/sortLogic";
 import { useProfiles } from "@eldritchtools/shared-components";
+import { pals, PalIcon, PalSelect, PassiveSelect, palIdSortFunc, checkIdSearchMatch } from "@eldritchtools/palworld-shared-library";
 
 function SliderComponent({ value, setValue, min = 1, max = 10 }) {
     return (
@@ -129,7 +124,7 @@ function SidePanel({ suggestedPals, handleCompute, isRunning }) {
         if (menuSetting && !passives.includes(menuSetting)) return false;
         if (ownedSearch === "") return true;
         return checkIdSearchMatch(ownedSearch, palId);
-    }).sort((a, b) => sortFromIds(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch, menuSetting]);
+    }).sort((a, b) => palIdSortFunc(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch, menuSetting]);
 
     components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "30%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
@@ -210,14 +205,14 @@ function SidePanel({ suggestedPals, handleCompute, isRunning }) {
                 if (passives.includes(menuSetting)) return false;
                 if (unownedSearch === "") return true;
                 return checkIdSearchMatch(unownedSearch, palId);
-            }).sort((a, b) => sortFromIds(a[0], b[0])).map(([palId, _]) => palId);
+            }).sort((a, b) => palIdSortFunc(a[0], b[0])).map(([palId, _]) => palId);
         } else {
-            return Object.keys(data.pals).filter(palId => {
+            return Object.keys(pals).filter(palId => {
                 if (palId in profileData.pals) return false;
                 if (suggestedPals && suggestedPals.some(suggestion => palId === suggestion.id)) return false;
                 if (unownedSearch === "") return true;
                 return checkIdSearchMatch(unownedSearch, palId);
-            }).sort((a, b) => sortFromIds(a, b))
+            }).sort((a, b) => palIdSortFunc(a, b))
         }
     }, [profileData.pals, suggestedPals, unownedSearch, menuSetting]);
 
