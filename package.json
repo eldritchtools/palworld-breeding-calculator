@@ -30,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "REACT_APP_LAST_UPDATED=$(git log -1 --format=%cI) react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

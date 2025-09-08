@@ -126,7 +126,7 @@ function SidePanel({ suggestedPals, handleCompute, isRunning }) {
         return checkIdSearchMatch(ownedSearch, palId);
     }).sort((a, b) => palIdSortFunc(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch, menuSetting]);
 
-    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "30%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
+    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "32%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
             {menuSetting ? "Pals with this passive " : "Owned Pals "}
             <input onChange={handleSetOwnedSearch} value={ownedSearch} />
@@ -216,7 +216,7 @@ function SidePanel({ suggestedPals, handleCompute, isRunning }) {
         }
     }, [profileData.pals, suggestedPals, unownedSearch, menuSetting]);
 
-    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "35%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
+    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "38%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         {suggestedPals && suggestedPals.length > 0 ? <>
             <div>Pals likely to enable easier paths if caught</div>
             <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "center", overflowX: "auto", overflowY: "hidden", boxSizing: "border-box", gap: "0.3rem", margin: "0.2rem" }}>
@@ -333,7 +333,7 @@ function PathsDisplay({ candidatePaths, passives, isRunning }) {
             { flex: 1, height: "100%", border: "1px #aaa solid", borderRadius: "20px" } :
             { width: "100%", height: "100%", border: "1px #aaa solid", borderRadius: "20px" };
 
-        return <div style={{ display: "flex", flexDirection: "column", height: "95%", width: "98%", padding: "0.2rem", justifyContent: "space-between" }}>
+        return <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "98%", padding: "0.2rem", justifyContent: "space-between" }}>
             <div style={outerContainerStyle}>
                 {paths.map(path => <div style={innerContainerStyle}>
                     <BreedPathTree breedPath={path.path} passives={passives} coloredEdges={coloredEdges} />

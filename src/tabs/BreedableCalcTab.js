@@ -30,7 +30,7 @@ function SidePanel({ handleCompute }) {
         return checkIdSearchMatch(ownedSearch, palId);
     }).sort((a, b) => palIdSortFunc(a[0], b[0])).map(([palId, _]) => palId), [profileData.pals, ownedSearch]);
 
-    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "43%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
+    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "45%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
             {"Owned Pals "}
             <input onChange={handleSetOwnedSearch} value={ownedSearch} />
@@ -95,7 +95,7 @@ function SidePanel({ handleCompute }) {
         }).sort((a, b) => palIdSortFunc(a, b))
     }, [profileData.pals, unownedSearch]);
 
-    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "45%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
+    components.push(<div style={{ display: "flex", flexDirection: "column", width: "95%", height: "48%", padding: "2px", borderRadius: "5px", border: "2px #aaa solid" }}>
         <div>
             {"Unowned Pals "}
             <input onChange={handleSetUnownedSearch} value={unownedSearch} />
@@ -124,7 +124,7 @@ function SpreadDisplay({ palsByLayer }) {
         const steps = Object.keys(palsByLayer);
         steps.sort((a, b) => a - b);
 
-        return <div style={{ height: "95%", width: "98%", padding: "0.2rem", }}>
+        return <div style={{ height: "100%", width: "98%", padding: "0.2rem", }}>
             <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", overflowY: "auto", gap: "0.2rem" }}>
                 {steps.map(step => {
                     return <div style={{ display: "flex", flexDirection: "column", textAlign: "start", gap: "0.5rem", border: "1px #aaa solid", borderRadius: "15px", padding: "0.5rem" }}>
