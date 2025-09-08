@@ -1,5 +1,6 @@
 import Braloha from "./BreedingSnippets/Braloha";
 import DimensionalPalStorage from "./BreedingSnippets/DimensionalPalStorage";
+import Gender from "./BreedingSnippets/Gender";
 import GettingPassiveBreed from "./BreedingSnippets/GettingPassiveBreed";
 import GettingPassiveDrBrawn from "./BreedingSnippets/GettingPassiveDrBrawn";
 import GettingPassiveSurgery from "./BreedingSnippets/GettingPassiveSurgery";
@@ -25,6 +26,9 @@ function BreedableCalcTab() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(400px, 1fr)", gap: "0.5rem" }}>
                 <div><Braloha /></div>
                 <div><DimensionalPalStorage /></div>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(400px, 1fr)", gap: "0.5rem" }}>
+                <div><Gender /></div>
             </div>
         </div>
     </div>;

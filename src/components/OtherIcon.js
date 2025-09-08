@@ -48,17 +48,17 @@ const OtherIconPaths = {
     "Dimensional Pal Storage": "T_icon_buildObject_DimensionPalStorage"
 }
 
-function OtherIcon({ object, count=null }) {
-    const size = "60px";
-    const style = { width: size, height: size };
+function OtherIcon({ object, size = null, count = null }) {
+    const actualSize = size ? `${size}px` : "60px";
+    const sizeStyle = { width: actualSize, height: actualSize };
 
     if (!object) {
-        return <div style={style} />
+        return <div style={sizeStyle} />
     }
 
-    return <div style={{ display: "flex", height: size, width: size }}>
-        <div style={{ position: "relative", height: size, width: size }}>
-            <img src={`${ASSETS_ROOT}/others/${OtherIconPaths[object]}.png`} alt={object} title={object} style={style} />
+    return <div style={{ ...sizeStyle, display: "flex" }}>
+        <div style={{ ...sizeStyle, position: "relative" }}>
+            <img src={`${ASSETS_ROOT}/others/${OtherIconPaths[object]}.png`} alt={object} title={object} style={sizeStyle} />
             {count ? <span style={{ fontSize: "1em", color: "#aaa", position: "absolute", bottom: "0%", right: "0%", fontWeight: "bold" }}>x{count}</span> : null}
         </div>
     </div>
