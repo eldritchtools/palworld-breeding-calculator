@@ -120,6 +120,7 @@ function SidePanel({ handleCompute }) {
 }
 
 function SpreadDisplay({ palsByLayer }) {
+    const { profileData } = useProfiles();
     if (palsByLayer && Object.keys(palsByLayer).length > 0) {
         const steps = Object.keys(palsByLayer);
         steps.sort((a, b) => a - b);
@@ -127,7 +128,7 @@ function SpreadDisplay({ palsByLayer }) {
         return <div style={{ height: "100%", width: "98%", padding: "0.2rem", }}>
             <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", overflowY: "auto", gap: "0.2rem" }}>
                 {steps.map(step => {
-                    return <div style={{ display: "flex", flexDirection: "column", textAlign: "start", gap: "0.5rem", border: "1px #aaa solid", borderRadius: "15px", padding: "0.5rem" }}>
+                    return <div style={{ display: "flex", flexDirection: "column", textAlign: "start", gap: "0.5rem", border: "1px #aaa solid", borderRadius: "15px", padding: "0.5rem", flex: "0 0 auto" }}>
                         <div style={{ display: "flex" }}>
                             <div data-tooltip-id={`Layer${step}`} style={{ fontSize: "1.2rem", fontWeight: "bold", borderBottom: "1px #aaa dashed" }}>
                                 Layer {step}
@@ -156,6 +157,22 @@ function SpreadDisplay({ palsByLayer }) {
                         </div>
                     </div>
                 })}
+                <div style={{ display: "flex", flexDirection: "column", textAlign: "start", gap: "0.5rem", border: "1px #aaa solid", borderRadius: "15px", padding: "0.5rem", flex: "0 0 auto" }}>
+                        <div style={{ display: "flex" }}>
+                            <div style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+                                Remaining Unbreedable Pals
+                            </div>
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "row", width: "98%", flexWrap: "wrap", gap: "1rem" }}>
+                            {Object.keys(pals).filter(id => {
+                                if(id in profileData.pals) return false;
+                                if(Object.values(palsByLayer).some(layer => id in layer)) return false;
+                                return true
+                            }).map(id => {
+                                return <PalIcon id={id} circle={true} showName={true} showPalNumber={true} wrapName={true} />
+                            })}
+                        </div>
+                    </div>
             </div>
         </div>
     } else {
