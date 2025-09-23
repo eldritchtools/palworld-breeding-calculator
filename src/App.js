@@ -14,6 +14,14 @@ import { useEffect, useState } from 'react';
 
 const tooltipNormalStyle = { ...tooltipStyle, fontWeight: "normal" };
 
+const description = <span>
+    Palworld Breeding Calculator is a free fan-made online tool that helps players with their breeding plans.
+    <br /><br />
+    Find out how to breed specific Pals, discover breeding paths based on the Pals and passives you already have, or view all the Pals you can breed from your current collection.
+    <br /><br />
+    The goal is to make it easier to plan breeding without guesswork, whether you just need a quick answer or want to map out longer routes.
+</span>;
+
 function App() {
     const [migrated, setMigrated] = useState(false);
 
@@ -83,7 +91,7 @@ function App() {
                     </div>
                 </div>
                 <Footer
-                    description={"This site is a fan-made web tool built to help with breeding planning for Palworld players."}
+                    description={description}
                     gameName={"Palworld"}
                     developerName={"Pocketpair"}
                     githubLink={"https://github.com/eldritchtools/palworld-breeding-calculator"}
