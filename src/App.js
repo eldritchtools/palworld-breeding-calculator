@@ -11,6 +11,7 @@ import { tooltipStyle } from './styles';
 import { Header, Footer, ProfileProvider } from '@eldritchtools/shared-components';
 import migrateProfile, { firstMigrate } from './migrateProfile';
 import { useEffect, useState } from 'react';
+import MigrationTab from './tabs/MigrationTab';
 
 const tooltipNormalStyle = { ...tooltipStyle, fontWeight: "normal" };
 
@@ -38,46 +39,31 @@ function App() {
     return (migrated ?
         <ProfileProvider dbName={"palworld-breeding-calculator"} migrateProfile={migrateProfile}>
             <div className="App">
-                <div style={{ height: "100vh" }} >
+                <div style={{ minHeight: "100vh", height: "auto" }} >
                     <Header title={"Palworld Breeding Calculator"} lastUpdated={process.env.REACT_APP_LAST_UPDATED} />
                     <div className="App-content">
                         <Tabs className="tabs" selectedTabClassName="selected-tab" selectedTabPanelClassName="selected-tab-panel">
                             <TabList className="tab-list">
-                                <Tab className="tab" data-tooltip-id={"parentCalcTab"}>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Find what pals a certain parent/s can breed"}>
                                     Parent Calculator
-                                    <Tooltip id={"parentCalcTab"} style={tooltipNormalStyle}>
-                                        Find what pals a certain parent/s can breed
-                                    </Tooltip>
                                 </Tab>
-                                <Tab className="tab" data-tooltip-id={"childCalcTab"}>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Find what parents can breed a certain pal"}>
                                     Child Calculator
-                                    <Tooltip id={"childCalcTab"} style={tooltipNormalStyle}>
-                                        Find what parents can breed a certain pal
-                                    </Tooltip>
                                 </Tab>
-                                <Tab className="tab" data-tooltip-id={"pathCalcTab"}>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Find what paths you can take to breed a specific pal (and optionally with specific passives) based on the pals you own"}>
                                     Breed Path Calculator
-                                    <Tooltip id={"pathCalcTab"} style={tooltipNormalStyle}>
-                                        Find what paths you can take to breed a specific pal (and optionally with specific passives) based on the pals you own
-                                    </Tooltip>
                                 </Tab>
-                                <Tab className="tab" data-tooltip-id={"breedableCalcTab"}>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Find what pals you can breed based on the pals you own"}>
                                     Breedable Pals Calculator
-                                    <Tooltip id={"breedableCalcTab"} style={tooltipNormalStyle}>
-                                        Find what pals you can breed based on the pals you own
-                                    </Tooltip>
                                 </Tab>
-                                <Tab className="tab" data-tooltip-id={"breedingSnippetsTab"}>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Short snippets and tips on how breeding works"}>
                                     Breeding Snippets
-                                    <Tooltip id={"breedingSnippetsTab"} style={tooltipNormalStyle}>
-                                        Short snippets and tips on how breeding works
-                                    </Tooltip>
                                 </Tab>
-                                <Tab className="tab" data-tooltip-id={"profilesTab"}>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Switch profiles to better manage your pals if you have multiple saves"}>
                                     Profiles
-                                    <Tooltip id={"profilesTab"} style={tooltipNormalStyle}>
-                                        Switch profiles to better manage your pals if you have multiple saves
-                                    </Tooltip>
+                                </Tab>
+                                <Tab className="tab" data-tooltip-id={"tabTooltip"} data-tooltip-content={"Details on migration"}>
+                                    Click here if your data's missing
                                 </Tab>
                             </TabList>
 
@@ -87,9 +73,11 @@ function App() {
                             <TabPanel className="tab-panel"><BreedableCalcTab /></TabPanel>
                             <TabPanel className="tab-panel"><BreedingSnippetsTab /></TabPanel>
                             <TabPanel className="tab-panel"><ProfilesTab /></TabPanel>
+                            <TabPanel className="tab-panel"><MigrationTab /></TabPanel>
                         </Tabs>
                     </div>
                 </div>
+                <Tooltip id={"tabTooltip"} style={tooltipNormalStyle} />
                 <Footer
                     description={description}
                     gameName={"Palworld"}

@@ -8,7 +8,7 @@
 .App-content {
   background-color: #1f1f1f;
   min-height: 90vh;
-  max-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,14 +108,16 @@ input[type="number"] {
 
 .tab-panel {
     display: none;
-    height: 90vh;
+    min-height: 90vh;
+    height: auto;
 }
 
 .selected-tab-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    min-height: 90vh;
+    height: auto;
     /* overflow-y: auto;
     scrollbar-color: rgba(155, 155, 155, 0.5) transparent; */
     /* border: 2px solid gray; */

@@ -304,7 +304,7 @@ function PassivesPanel() {
 }
 
 function ProfilesTab() {
-    return <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%" }}>
+    return <div style={{ display: "flex", flexDirection: "column", height: "90vh", width: "100%" }}>
         <ProfilesPanel />
         <div style={{ height: "90%", width: "100%", display: "flex", flexDirection: "row" }}>
             <div style={{ height: "100%", width: "50%" }}>

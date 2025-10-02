@@ -1,12 +1,12 @@
 {
   "name": "palworld-breeding-calculator",
   "version": "0.1.0",
-  "homepage": "https://eldritchtools.github.io/palworld-breeding-calculator/",
+  "homepage": "https://palworld-breeding.eldritchtools.com/",
   "private": true,
   "dependencies": {
     "@dagrejs/dagre": "^1.1.5",
     "@eldritchtools/palworld-shared-library": "github:eldritchtools/palworld-shared-library#v1.0.5",
-    "@eldritchtools/shared-components": "github:eldritchtools/shared-components#v1.2.4",
+    "@eldritchtools/shared-components": "github:eldritchtools/shared-components#v1.2.5",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",

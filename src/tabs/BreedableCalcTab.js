@@ -190,7 +190,7 @@ function BreedableCalcTab() {
         setPalsByLayer(palsByLayer);
     }
 
-    return <div style={{ height: "100%", width: "100%", display: "flex" }}>
+    return <div style={{ height: "90vh", width: "100%", display: "flex" }}>
         <div style={{ height: "100%", width: "30%" }}>
             <SidePanel handleCompute={handleCompute} />
         </div>
