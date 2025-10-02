@@ -3,7 +3,7 @@ function MigrationTab() {
         <span>
             I'm migrating my tools to a new domain. The old link should have brought you here directly.
             <br /> <br />
-            Unfortunately I can't automatically migrate the data from the previous domain due to how it's stored, but I've made the <a href={"https://eldritchtools.github.io/palworld-base-planner-old/"}>old page accessible here</a>.
+            Unfortunately I can't automatically migrate the data from the previous domain due to how it's stored, but I've made the <a href={"https://eldritchtools.github.io/palworld-breeding-calculator-old/"}>old page accessible here</a>.
             <br /> <br />
             You can export your data from there and import it here using the Settings and Profiles tab.
             <br /> <br />
