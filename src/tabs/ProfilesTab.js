@@ -1,16 +1,21 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 
 import { Modal } from "../components/Modal";
 import { useProfiles } from "@eldritchtools/shared-components";
 import { pals, PalIcon, PalSelect, PassiveSelect, PassiveComponent, checkIdSearchMatch, palIdSortFunc } from "@eldritchtools/palworld-shared-library";
 
 function ProfilesPanel() {
-    const { profiles, currentProfile, addProfile, switchProfile, copyProfile, deleteProfile } = useProfiles();
+    const { profiles, currentProfile, addProfile, switchProfile, copyProfile, deleteProfile, exportProfile, importProfile } = useProfiles();
     const [selected, setSelected] = useState(null);
     const [addProfileIsOpen, setAddProfileIsOpen] = useState(false);
     const [copyProfileIsOpen, setCopyProfileIsOpen] = useState(false);
     const [deleteProfileIsOpen, setDeleteProfileIsOpen] = useState(false);
+    const [exportProfileIsOpen, setExportProfileIsOpen] = useState(false);
+    const [importProfileIsOpen, setImportProfileIsOpen] = useState(false);
     const [name, setName] = useState("");
+    const [dataString, setDataString] = useState("");
+    const textAreaRef = useRef(null);
+    const [copySuccess, setCopySuccess] = useState('');
 
     const handleSwitchProfileButton = () => {
         if (!selected) return;
@@ -29,6 +34,17 @@ function ProfilesPanel() {
         setDeleteProfileIsOpen(true);
     }
 
+    const handleExportProfileButton = () => {
+        if (!selected) return;
+        exportProfile(selected).then(data => setDataString(data));
+        setExportProfileIsOpen(true);
+    }
+
+    const handleImportProfileButton = () => {
+        setImportProfileIsOpen(true);
+    }
+
+
     const closeAddProfile = () => {
         setAddProfileIsOpen(false);
         setName("");
@@ -37,6 +53,17 @@ function ProfilesPanel() {
     const closeCopyProfile = () => {
         setCopyProfileIsOpen(false);
         setName("");
+    }
+
+    const closeExportProfile = () => {
+        setExportProfileIsOpen(false);
+        setDataString("");
+    }
+
+    const closeImportProfile = () => {
+        setImportProfileIsOpen(false);
+        setName("");
+        setDataString("");
     }
 
     const handleAddProfile = () => {
@@ -62,6 +89,26 @@ function ProfilesPanel() {
         setDeleteProfileIsOpen(false);
     }
 
+    const handleImportProfile = () => {
+        importProfile(name, dataString);
+        setImportProfileIsOpen(false);
+        setName("");
+        setDataString("");
+    }
+
+    const handleCopy = async () => {
+        if (textAreaRef.current) {
+            try {
+                await navigator.clipboard.writeText(textAreaRef.current.value);
+                setCopySuccess('Copied!');
+                setTimeout(() => setCopySuccess(''), 2000);
+            } catch (err) {
+                setCopySuccess('Failed to copy!');
+                console.error('Failed to copy text: ', err);
+            }
+        }
+    };
+
     return <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.2rem" }}>
         <span style={{ fontSize: "1.2rem", fontWeight: "bold" }}>Profiles</span>
         <div style={{ display: "flex", width: "50%", height: "5rem", justifyContent: "center", overflowY: "scroll", border: "1px #aaa solid" }}>
@@ -78,6 +125,8 @@ function ProfilesPanel() {
             <button onClick={handleSwitchProfileButton}>Switch to Selected Profile</button>
             <button onClick={handleCopyProfileButton}>Copy Selected Profile</button>
             <button onClick={handleDeleteProfileButton}>Delete Selected Profile</button>
+            <button onClick={handleExportProfileButton}>Export Selected Profile</button>
+            <button onClick={handleImportProfileButton}>Import Selected Profile</button>
         </div>
         <span style={{ fontSize: "1.2rem", fontWeight: "bold" }}>Current Profile: {currentProfile}</span>
 
@@ -104,6 +153,26 @@ function ProfilesPanel() {
             <div style={{ display: "flex", justifyContent: "end", gap: "2" }}>
                 <button onClick={() => setDeleteProfileIsOpen(false)}>Cancel</button>
                 <button onClick={handleDeleteProfile}>Delete</button>
+            </div>
+        </Modal>
+
+        <Modal isOpen={exportProfileIsOpen} onClose={closeExportProfile}>
+            <h3>Copy the following string to import '{selected}' to another device</h3>
+            <textarea style={{ height: "5rem", width: "90%" }} ref={textAreaRef} readOnly={true} value={dataString} onClick={handleCopy} />
+            <div>{copySuccess ?? null}</div>
+            <div style={{ display: "flex", justifyContent: "end", gap: "2" }}>
+                <button onClick={closeExportProfile}>Close</button>
+            </div>
+        </Modal>
+
+        <Modal isOpen={importProfileIsOpen} onClose={closeImportProfile}>
+            <h3>Input name of new profile:</h3>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} autoFocus />
+            <h3>Input exported data string:</h3>
+            <textarea style={{ height: "5rem", width: "90%" }} value={dataString} onChange={e => setDataString(e.target.value)} />
+            <div style={{ display: "flex", justifyContent: "end", gap: "2" }}>
+                <button onClick={closeImportProfile}>Cancel</button>
+                <button onClick={handleImportProfile}>Import</button>
             </div>
         </Modal>
     </div>
@@ -271,7 +340,7 @@ function PassivesPanel() {
 
     const addPal = () => {
         setProfileData(prev => {
-            const newPals = {...prev.pals, [selectedPalId]: []};
+            const newPals = { ...prev.pals, [selectedPalId]: [] };
             return { ...prev, pals: newPals };
         });
     }
