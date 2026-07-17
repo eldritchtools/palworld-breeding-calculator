@@ -70,6 +70,7 @@ function StaticFlowchart({ nodes, edges, rows = null, columns = null, width = nu
         if (!containerRef.current) return;
 
         const updatePositions = () => {
+            if(!containerRef.current) return;
             const containerRect = containerRef.current.getBoundingClientRect();
             const nodeElems = Array.from(
                 containerRef.current.querySelectorAll(".node")

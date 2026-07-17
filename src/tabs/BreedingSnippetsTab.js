@@ -11,6 +11,7 @@ import MoreOfAPal from "./BreedingSnippets/MoreOfAPal";
 
 function BreedableCalcTab() {
     return <div style={{ height: "100%", width: "100%", overflowY: "auto" }}>
+        <span style={{ fontWeight: "bold" }}>Warning: This page has largely not been updated for 1.0. Any relevant mechanics that are new or changed will not be here.</span>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(800px, 1fr)", gap: "0.5rem" }}>
             <div><HowToBreed /></div>
             <div><GettingPassiveBreed /></div>

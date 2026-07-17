@@ -1,3 +1,8 @@
+:root {
+  --bg-secondary: black;
+  --bg-hover: #333;
+}
+
 .App {
   text-align: center;
   scrollbar-color: rgba(155, 155, 155, 0.5) transparent;

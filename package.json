@@ -5,8 +5,8 @@
   "private": true,
   "dependencies": {
     "@dagrejs/dagre": "^1.1.5",
-    "@eldritchtools/palworld-shared-library": "github:eldritchtools/palworld-shared-library#v1.0.5",
-    "@eldritchtools/shared-components": "github:eldritchtools/shared-components#v1.2.5",
+    "@eldritchtools/palworld-shared-library": "github:eldritchtools/palworld-shared-library#v1.1.1",
+    "@eldritchtools/shared-components": "github:eldritchtools/shared-components#v1.5.44",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
@@ -19,6 +19,7 @@
     "react-data-table-component": "^7.7.0",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
+    "react-router-dom": "^7.18.1",
     "react-scripts": "5.0.1",
     "react-select": "^5.10.2",
     "react-tabs": "^6.1.0",
